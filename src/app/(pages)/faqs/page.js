@@ -1,11 +1,10 @@
-import { Home } from 'lucide-react'
 import React from 'react'
-
+import Faqs from './Faqs'
 
 const page = () => {
   return (
     <div>
-<Home/>
+ <Faqs/>
     </div>
   )
 }
