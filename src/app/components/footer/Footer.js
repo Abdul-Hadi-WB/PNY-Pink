@@ -341,7 +341,7 @@ const Footer = () => {
             <span className="text-[#C2366F]">
               ♥
             </span>{' '}
-            for women
+            for womens
           </p>
 
         </div>
