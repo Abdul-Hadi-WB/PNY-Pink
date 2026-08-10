@@ -98,7 +98,7 @@ const featuredCourses = [
   {
     id: 1,
     image: "/images/section4img1.jpeg",
-    title: "Networking & Cyber Security",
+    title: "Beautician Salon Artist Course 2.0",
     duration: "High-paid field",
     price: "£29.99",
     description: "Enter one of tech's highest-paid fields with in-demand security skills.",
