@@ -92,49 +92,48 @@ const courses = [
 ];
 
 // ============================================
-// SECTION 4: FEATURED COURSES (5 UNIQUE)
+// SECTION 4: FEATURED COURSES (UPDATED with new data)
 // ============================================
 const featuredCourses = [
   {
     id: 1,
     image: "/images/section4img1.jpeg",
     title: "Beautician Salon Artist Course 2.0",
-    duration: "High-paid field",
-    price: "£29.99",
-    description: "Enter one of tech's highest-paid fields with in-demand security skills.",
-    // badge removed – no green banner
+    duration: "2 Months",
+    price: "150,000",
+    description: "Master professional salon skills with advanced beauty techniques and hands-on training.",
   },
   {
     id: 2,
     image: "/images/section4img2.jpeg",
-    title: "Access Education",
-    duration: "UCA's-rec",
-    price: "£1.99",
-    description: "Get into university recognition with flexible, fully online study.",
+    title: "Nail Technician Course",
+    duration: "1 Month",
+    price: "65,000",
+    description: "Learn professional nail art, extensions, grooming, and salon-ready techniques.",
   },
   {
     id: 3,
     image: "/images/section4img3.jpeg",
-    title: "Health & Fitness",
-    duration: "Certified Coach",
-    price: "£29.99",
-    description: "Turn your passion for fitness into a career as a personal trainer.",
+    title: "MK Skin Aesthetics Course",
+    duration: "1 Month",
+    price: "50,000",
+    description: "Master skin aesthetics, facials, and advanced beauty treatments for glowing skin.",
   },
   {
     id: 4,
     image: "/images/section4img4.jpg",
-    title: "IT & Web Design",
-    duration: "Future-proof",
-    price: "£29.99",
-    description: "Lead the digital revolution with skills in web design, coding and IT.",
+    title: "Hair Cutting Course",
+    duration: "1 Month",
+    price: "40,000",
+    description: "Learn precision hair cutting, styling, and modern hairdressing techniques.",
   },
   {
     id: 5,
     image: "/images/section4img5.png",
-    title: "Lifestyle & Wellbeing",
-    duration: "Self Development",
-    price: "£29.99",
-    description: "Explore a range of courses to help you achieve your personal goals.",
+    title: "Makeup Artistry Course",
+    duration: "1.5 Months",
+    price: "60,000",
+    description: "Master the art of makeup with professional techniques for bridal, fashion, and editorial.",
   },
 ];
 
@@ -147,7 +146,7 @@ export default function Home() {
     containScroll: false,
     loop: true,
     dragFree: false,
-    slidesToScroll: 2,        // 2 cards move at a time
+    slidesToScroll: 2,
   });
 
   // Auto-slide for main Slider (Section 1)
@@ -391,11 +390,15 @@ export default function Home() {
 
       {/* ======================================================
           SECTION 4: FEATURED COURSES 
+          - Reduced padding: py-6 md:py-10 (minimal space)
+          - New courses: Beautician, Nail, Skin, Hair, Makeup
+          - Large cards, large gap, 3 full + 2 half cards
+          - Infinite loop, 2 cards per scroll
       ====================================================== */}
-      <section className="py-24 md:py-32 bg-white overflow-hidden">
+      <section className="py-6 md:py-10 bg-white overflow-hidden"> {/* ✅ padding kam kar di */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1e1e2a]">
               Featured <span className="text-[#C2366F]">Courses</span>
             </h2>
@@ -439,7 +442,7 @@ export default function Home() {
                       </p>
                       <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
                         <span className="text-2xl font-bold text-[#C2366F]">
-                          {course.price}
+                          Rs. {course.price}
                           <span className="text-xs font-normal text-[#4a4a5a]/40 ml-1">/month*</span>
                         </span>
                         <button className="text-sm font-medium text-[#C2366F] hover:text-white hover:bg-[#C2366F] px-4 py-1.5 rounded-full border border-[#C2366F]/30 hover:border-[#C2366F] transition-all duration-300">
@@ -454,7 +457,7 @@ export default function Home() {
           </div>
 
           {/* Arrows & Dots */}
-          <div className="flex justify-center items-center gap-4 mt-10">
+          <div className="flex justify-center items-center gap-4 mt-8">
             <button
               onClick={scrollPrev}
               className="w-12 h-12 rounded-full border-2 border-[#C2366F]/20 text-[#C2366F] hover:bg-[#C2366F] hover:text-white hover:border-[#C2366F] transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg"
@@ -485,7 +488,7 @@ export default function Home() {
           </div>
 
           {/* Partner */}
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-16 bg-[#C2366F]/20"></div>
               <span className="text-[#4a4a5a]/40 text-xs uppercase tracking-widest font-medium">
