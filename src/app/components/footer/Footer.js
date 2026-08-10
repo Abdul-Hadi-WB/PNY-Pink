@@ -1,13 +1,21 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
+import { 
+  Phone,
+  Mail,
+  MapPin,
+  ArrowRight,
+  Heart
+} from 'lucide-react'
 
 const Footer = () => {
   return (
     <footer className="bg-[#C2366F] text-white">
 
-      {/* Top Green Accent */}
-      <div className="h-1 w-full bg-[#7BD535]" />
+      {/* Top Pink Accent */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#C2366F] via-[#E86D9B] to-[#C2366F]" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
 
@@ -16,7 +24,7 @@ const Footer = () => {
           {/* ================= BRAND ================= */}
           <div className="lg:pr-8">
 
-            {/* Logo */}
+            {/* Logo with White Background */}
             <div className="mb-6 inline-flex rounded-xl bg-white px-5 py-3 shadow-lg">
               <img
                 src="/images/pnypink-footer-logo.png"
@@ -37,14 +45,10 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
               >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14 8h3V5h-3c-2.8 0-5 2.2-5 5v2H6v3h3v6h3v-6h3l1-3h-4v-2c0-1.1.9-2 2-2z" />
+                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M14 8h3V5h-3c-2.8 0-5 2.2-5 5v2H6v3h3v6h3v-6h3l1-3h-4v-2c0-1.1.9-2 2-2z"/>
                 </svg>
               </a>
 
@@ -52,24 +56,12 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
               >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle
-                    cx="17.5"
-                    cy="6.5"
-                    r="1"
-                    fill="currentColor"
-                    stroke="none"
-                  />
+                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
                 </svg>
               </a>
 
@@ -77,14 +69,10 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="YouTube"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
               >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z" />
+                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/>
                 </svg>
               </a>
 
@@ -92,7 +80,7 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="WhatsApp"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
               >
                 <svg
                   className="h-5 w-5"
@@ -112,62 +100,68 @@ const Footer = () => {
               Quick Links
             </h3>
 
-            <div className="mb-7 h-1 w-8 rounded-full bg-[#7BD535]" />
+            <div className="mb-7 h-1 w-8 rounded-full bg-[#E86D9B]" />
 
-            <ul className="space-y-4">
+            <ul className="space-y-3">
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Home
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/about"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   About Us
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/courses"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Courses
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/admissions"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Admissions
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/events"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Events
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/gallery"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Gallery
-                </a>
+                </Link>
               </li>
 
             </ul>
@@ -179,62 +173,68 @@ const Footer = () => {
               Explore
             </h3>
 
-            <div className="mb-7 h-1 w-8 rounded-full bg-[#7BD535]" />
+            <div className="mb-7 h-1 w-8 rounded-full bg-[#E86D9B]" />
 
-            <ul className="space-y-4">
+            <ul className="space-y-3">
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/news"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   News & Updates
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/blog"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Blog
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/faqs"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   FAQs
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Contact Us
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/privacy-policy"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Privacy Policy
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-white/90 transition-all duration-300 hover:pl-1 hover:text-[#7BD535]"
+                <Link
+                  href="/terms"
+                  className="text-sm text-white/80 transition-all duration-300 hover:pl-2 hover:text-white flex items-center gap-1 group"
                 >
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
 
             </ul>
@@ -247,106 +247,111 @@ const Footer = () => {
               Get In Touch
             </h3>
 
-            <div className="mb-7 h-1 w-8 rounded-full bg-[#7BD535]" />
+            <div className="mb-7 h-1 w-8 rounded-full bg-[#E86D9B]" />
 
-            <div className="space-y-5">
+            <div className="space-y-4">
 
-              <div className="flex gap-3">
-                <span className="text-xl text-[#7BD535]">
-                  ⌖
-                </span>
-
-                <p className="text-sm leading-6 text-white/90">
-                  Lahore, Pakistan
-                </p>
+              <div className="flex items-start gap-4 group">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                  <MapPin size={18} className="text-[#22C55E]" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60">Address</p>
+                  <p className="text-sm text-white/90">
+                    Lahore, Pakistan
+                  </p>
+                </div>
               </div>
 
-              <div className="flex gap-3">
-                <span className="text-xl text-[#7BD535]">
-                  ☎
-                </span>
-
-                <p className="text-sm text-white/90">
-                  0304-1111774
-                </p>
+              <div className="flex items-start gap-4 group">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                  <Phone size={18} className="text-[#22C55E]" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60">Phone</p>
+                  <p className="text-sm text-white/90">
+                    0304-1111774
+                  </p>
+                </div>
               </div>
 
-              <div className="flex gap-3">
-                <span className="text-xl text-[#7BD535]">
-                  ✉
-                </span>
-
-                <p className="text-sm text-white/90">
-                  info@pnypink.com
-                </p>
+              <div className="flex items-start gap-4 group">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 group-hover:bg-white/20 transition-all duration-300">
+                  <Mail size={18} className="text-[#22C55E]" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60">Email</p>
+                  <p className="text-sm text-white/90">
+                    info@pnypink.com
+                  </p>
+                </div>
               </div>
 
             </div>
 
-            <a
-              href="#"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#252525] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#7BD535] hover:text-[#252525]"
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#22C55E] hover:text-white hover:shadow-xl hover:-translate-y-1 group"
             >
               Contact Us
-              <span className="text-lg">
-                →
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+
+          </div>
+
+        </div>
+
+        {/* ================= FOOTER DIVIDER - REDUCED HEIGHT ================= */}
+        <div className="mt-12 pt-3 border-t border-white/10">
+          <div className="flex flex-col items-center justify-between gap-1.5 md:flex-row">
+
+            {/* Privacy Links - Left on desktop */}
+            <div className="flex gap-6 order-2 md:order-1">
+              <Link
+                href="/privacy"
+                className="text-xs text-white/70 transition-all duration-300 hover:text-white hover:underline underline-offset-4"
+              >
+                Privacy
+              </Link>
+
+              <Link
+                href="/terms"
+                className="text-xs text-white/70 transition-all duration-300 hover:text-white hover:underline underline-offset-4"
+              >
+                Terms
+              </Link>
+
+              <Link
+                href="/sitemap"
+                className="text-xs text-white/70 transition-all duration-300 hover:text-white hover:underline underline-offset-4"
+              >
+                Sitemap
+              </Link>
+            </div>
+
+            {/* Copyright - Centered */}
+            <p className="text-xs text-white/70 text-center order-1 md:order-2">
+              © 2026{' '}
+              <span className="font-semibold text-white">
+                PNY Pink
               </span>
-            </a>
+              . All Rights Reserved.
+            </p>
+
+            {/* Made with love - Right on desktop */}
+            <p className="text-xs text-white/70 flex items-center gap-1 order-3">
+              Made with{' '}
+              <Heart size={12} className="text-[#E86D9B] fill-[#E86D9B] animate-pulse" />
+              {' '}for women
+            </p>
 
           </div>
-
-        </div>
-      </div>
-
-      {/* ================= BOTTOM BAR ================= */}
-      <div className="border-t border-white/20 bg-[#252525]">
-
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-5 text-center md:flex-row md:px-10 md:text-left">
-
-          <p className="text-xs text-white/70">
-            © 2026{' '}
-            <span className="font-semibold text-[#7BD535]">
-              PNY Pink
-            </span>
-            . All Rights Reserved.
-          </p>
-
-          <div className="flex gap-6">
-
-            <a
-              href="#"
-              className="text-xs text-white/70 transition hover:text-[#7BD535]"
-            >
-              Privacy
-            </a>
-
-            <a
-              href="#"
-              className="text-xs text-white/70 transition hover:text-[#7BD535]"
-            >
-              Terms
-            </a>
-
-            <a
-              href="#"
-              className="text-xs text-white/70 transition hover:text-[#7BD535]"
-            >
-              Sitemap
-            </a>
-
-          </div>
-
-          <p className="text-xs text-white/70">
-            Made with{' '}
-            <span className="text-[#C2366F]">
-              ♥
-            </span>{' '}
-            for womens
-          </p>
-
         </div>
 
       </div>
+
+      {/* ================= BOTTOM PINK BAR ================= */}
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#C2366F] via-[#E86D9B] to-[#C2366F]" />
 
     </footer>
   )
