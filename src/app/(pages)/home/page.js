@@ -1,5 +1,5 @@
-import { Home } from 'lucide-react'
 import React from 'react'
+import Home from './Home'
 
 const page = () => {
   return (
