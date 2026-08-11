@@ -16,6 +16,8 @@ import {
   Scissors,
   Flower2,
   Droplets,
+  Play,
+  Award
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -803,6 +805,179 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+{/* =====================================================
+          VIDEO SECTION - CELEBRATING OUR SUCCESS
+      ===================================================== */}
+      <section
+        id="video"
+        className="bg-gradient-to-b from-pink-50/30 to-white py-10 md:py-14"
+      >
+        <div className="container mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+
+            <div className="text-center mb-6 md:mb-8">
+              <div className="flex items-center justify-center gap-3 mb-1">
+                <div className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-[#C2366F]/10 flex-shrink-0">
+                  <Play size={18} className="text-[#C2366F] md:size-20" />
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+                  Celebrating{" "}
+                  <span className="text-[#C2366F] border-b-2 border-[#C2366F] pb-1">
+                    Our Success
+                  </span>
+                </h2>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600">
+              Hear from our students as they share their incredible journey and achievements at PNY Pink
+              </p>
+            </div>
+
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl">
+              <iframe
+                src="https://www.youtube.com/embed/o_jaK4lebjI"
+                title="🌸✨ Celebrating success, hard work & new beginnings! 🎓💐PNY #WomenEmpowerment #CelebrateSuccess"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
+              ></iframe>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+
+              <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 rounded-lg bg-black/50 px-3 py-1.5 md:px-4 md:py-2 text-white backdrop-blur-sm pointer-events-none">
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-red-500 md:size-20"
+                  >
+                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                    <path d="m10 15 5-3-5-3z" />
+                  </svg>
+
+                  <span className="text-xs md:text-sm font-medium">
+                    Watch on YouTube
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+              <div className="flex items-center gap-2 md:gap-3 rounded-xl bg-gradient-to-r from-[#C2366F]/10 to-[#8A1D4B]/10 px-4 py-2 md:px-6 md:py-3">
+                <div className="flex items-center gap-2">
+                  <Award
+                    size={16}
+                    className="text-[#C2366F] md:size-20"
+                  />
+
+                  <span className="text-sm md:text-base font-semibold text-gray-700">
+                    Student Success Stories
+                  </span>
+                </div>
+
+                <span className="text-xs md:text-sm text-gray-500">
+                  |
+                </span>
+
+                <span className="text-sm md:text-base font-bold text-[#C2366F]">
+                  2025
+                </span>
+              </div>
+
+              <div className="text-xs md:text-sm text-gray-500">
+                44 views • Aug 26, 2025
+              </div>
+            </div>
+
+            <div className="mt-4 md:mt-6 rounded-xl bg-white p-4 md:p-6 shadow-md">
+              <p className="text-xs md:text-sm text-gray-600">
+                <span className="font-semibold text-[#C2366F]">
+                  PNY Pink
+                </span>{" "}
+                proudly presents the success stories of our incredible students. Watch as they share their journey, hard work, and new beginnings. This video is a testament to the power of education and women empowerment. #WomenEmpowerment #CelebrateSuccess #PNYPink
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+   <section className="relative w-full overflow-hidden bg-white py-8 md:py-10 lg:py-12">
+      <div className="mx-auto max-w-[1550px] px-6 md:px-10 lg:px-14 xl:px-16">
+
+        {/* ===================== HEADING ===================== */}
+        <div className="mb-14 text-center md:mb-16 lg:mb-18">
+          <h2 className="text-[48px] font-semibold leading-[1.05] tracking-[-0.045em] text-[#202020] md:text-[62px] lg:text-[72px] xl:text-[80px]">
+            Who We Are{" "}
+            <span className="relative inline-block text-[#c2366f]">
+              PNY Pink
+
+              {/* Underline */}
+              <span className="absolute -bottom-5 left-0 h-[5px] w-full rounded-full bg-[#c2366f]" />
+            </span>
+          </h2>
+        </div>
+
+        {/* ===================== CONTENT ===================== */}
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-24">
+
+          {/* ================= LEFT CONTENT ================= */}
+          <div className="flex flex-col">
+
+            <div className="border-l-[4px] border-[#c2366f] pl-7 md:pl-9 lg:pl-10">
+
+              <h3 className="max-w-[700px] text-[30px] font-medium leading-[1.42] tracking-[-0.025em] text-[#151515] md:text-[34px] lg:text-[37px] xl:text-[39px]">
+                “PNY PINK is one of the leading institutions dedicated to
+                empowering women through practical skills, professional
+                training, and career-focused education.”
+              </h3>
+
+            </div>
+
+            {/* Pink + Green Accent */}
+            <div className="mt-8 flex items-center gap-3 pl-7 md:pl-9 lg:pl-10">
+              <span className="h-[11px] w-[105px] rounded-full bg-[#c2366f]" />
+              <span className="h-[11px] w-[55px] rounded-full bg-[#15803d]" />
+            </div>
+
+          </div>
+
+
+          {/* ================= RIGHT CONTENT ================= */}
+          <div className="flex items-center justify-center">
+
+            <div className="relative w-full max-w-[720px] rounded-[28px] border-2 border-[#7eaf89] bg-[#f6fbf7] px-8 py-9 md:px-10 md:py-10 lg:px-11 lg:py-11">
+
+              {/* Green Inner Vertical Line */}
+              <div className="absolute left-8 top-9 bottom-9 w-[5px] rounded-full bg-[#15803d] md:left-9 lg:left-10" />
+
+              <p className="pl-7 text-[18px] font-normal leading-[1.8] tracking-[-0.01em] text-[#252b27] md:pl-8 md:text-[20px] lg:text-[21px] xl:text-[22px]">
+                PNY PINK is one of the best institutions for women —
+                especially in Lahore, Pakistan — offering a range of
+                training programs designed for women building a career,
+                as well as those developing practical, home-based, and
+                professional skills.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
     </main>
   );
 }
