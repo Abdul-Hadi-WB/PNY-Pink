@@ -542,13 +542,33 @@ export default function Home() {
   </div>
 </section>
    
-  {/* ======================================================
-    SECTION: OUR COLLABORATIVE PARTNER (LARGER LOGOS)
-    - Animation from global CSS
-    - No styled-jsx (fixes Next.js hydration error)
+{/* ======================================================
+    SECTION 5: OUR COLLABORATIVE PARTNER (IMAGES UP)
+    - partners bg1 (girl) on left wall, slightly up
+    - partners bg2 (hands) on right wall, slightly up
+    - Small, clean, no opacity
 ====================================================== */}
-<section className="py-14 md:py-16 overflow-hidden bg-gradient-to-r from-pink-50/50 via-white to-pink-50/30">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+<section className="relative py-14 md:py-16 overflow-hidden bg-gradient-to-r from-pink-50/50 via-white to-pink-50/30">
+  
+  {/* Girl Image - Left Wall (slightly up) */}
+  <div className="absolute top-[25%] -translate-y-1/2 left-4 md:left-8 pointer-events-none">
+    <img
+      src="/images/partners bg1.png"
+      alt="Girl"
+      className="h-32 md:h-42 lg:h-50 w-auto object-contain"
+    />
+  </div>
+  
+  {/* Hands Image - Right Wall (slightly up) */}
+  <div className="absolute top-[25%] -translate-y-1/2 right-4 md:right-8 pointer-events-none">
+    <img
+      src="/images/partners bg2.png"
+      alt="Hands"
+      className="h-32 md:h-40 lg:h-48 w-auto object-contain"
+    />
+  </div>
+  
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     {/* Heading */}
     <div className="text-center max-w-2xl mx-auto mb-12">
       <h2 className="text-3xl md:text-4xl font-bold text-[#252525] leading-tight">
@@ -623,7 +643,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
 
 
 {/* ======================================================
