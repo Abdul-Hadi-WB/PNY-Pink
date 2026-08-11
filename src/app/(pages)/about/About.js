@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -25,14 +25,109 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+// ============================================
+// COUNTUP COMPONENT
+// ============================================
+const CountUp = ({ end, duration = 2000, suffix = "", prefix = "" }) => {
+  const [count, setCount] = useState(0);
+  const [displayValue, setDisplayValue] = useState("0");
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  const formatNumber = (num) => {
+    if (num >= 1000) {
+      return (num / 1000).toFixed(0) + "K";
+    }
+    return num.toString();
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime;
+    let animationFrame;
+
+    const updateCount = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * end);
+      
+      setCount(currentCount);
+      
+      if (end >= 1000) {
+        if (currentCount < 1000) {
+          setDisplayValue(currentCount.toString());
+        } else {
+          setDisplayValue(formatNumber(currentCount));
+        }
+      } else {
+        setDisplayValue(currentCount.toString());
+      }
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(updateCount);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(updateCount);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [isVisible, end, duration]);
+
+  return (
+    <span ref={elementRef}>
+      {prefix}
+      {displayValue}
+      {suffix}
+    </span>
+  );
+};
+
+// ============================================
+// MAIN ABOUT PAGE
+// ============================================
 const About = () => {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50/50 to-white">
 
       {/* =====================================================
-          HERO SECTION
+          HERO SECTION WITH BACKGROUND IMAGE
       ===================================================== */}
-      <section className="relative overflow-hidden bg-white py-16 md:py-20">
+      <section 
+        className="relative overflow-hidden py-16 md:py-20"
+        style={{
+          backgroundImage: `url('/images/ChatGPT Image Aug 11, 2026, 01_51_09 PM.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="absolute inset-0 opacity-5">
           <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#C2366F] blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#C2366F] blur-3xl"></div>
@@ -40,17 +135,17 @@ const About = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full border border-gray-200/30"></div>
         </div>
 
-        <div className="container relative mx-auto max-w-5xl px-4 sm:px-5 lg:px-8">
+        <div className="container relative z-10 mx-auto max-w-5xl px-4 sm:px-5 lg:px-8">
           <div className="mx-auto text-center">
 
-            <h1 className="mb-1 text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mb-1 text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
               Empowering Women Through
-              <span className="block text-[#C2366F] border-b-2 border-[#C2366F] w-fit mx-auto pb-1">
+              <span className="block text-[#C2366F] border-b-2 border-[#C2366F] w-fit mx-auto pb-1 drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
                 Education & Skills
               </span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg">
+            <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
               PNY Pink is a dedicated project for females, providing
               professional training and skills development in a supportive
               and empowering environment.
@@ -58,20 +153,20 @@ const About = () => {
 
             <div className="mx-auto mt-8 flex max-w-lg flex-wrap items-center justify-center gap-4">
               {[
-                { number: "50+", label: "Courses", icon: GraduationCap },
-                { number: "10K+", label: "Students", icon: Users },
-                { number: "5+", label: "Years", icon: Award },
+                { number: 50, label: "Courses", icon: GraduationCap, suffix: "+" },
+                { number: 10000, label: "Students", icon: Users, suffix: "+" },
+                { number: 5, label: "Years", icon: Award, suffix: "+" },
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="flex-1 min-w-[100px] rounded-xl bg-gray-50/80 p-3 text-center backdrop-blur-sm"
+                  className="flex-1 min-w-[100px] rounded-xl bg-white/80 backdrop-blur-sm p-3 text-center shadow-sm border border-gray-200/50"
                 >
                   <stat.icon
                     size={20}
                     className="mx-auto mb-1 text-[#C2366F]"
                   />
                   <div className="text-xl font-bold text-gray-900">
-                    {stat.number}
+                    <CountUp end={stat.number} suffix={stat.suffix} duration={2000} />
                   </div>
                   <div className="text-xs text-gray-500">
                     {stat.label}
@@ -81,21 +176,21 @@ const About = () => {
             </div>
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-200/50">
                 <Shield size={16} className="text-[#22C55E]" />
                 <span className="text-sm font-medium text-gray-700">
                   Trusted Institution
                 </span>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-200/50">
                 <CheckCircle size={16} className="text-[#22C55E]" />
                 <span className="text-sm font-medium text-gray-700">
                   100% Support
                 </span>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-200/50">
                 <TrendingUp size={16} className="text-[#22C55E]" />
                 <span className="text-sm font-medium text-gray-700">
                   Career Growth
@@ -130,40 +225,24 @@ const About = () => {
         <div className="container mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
           <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
 
-            <div className="relative order-2 lg:order-1 mx-auto w-full max-w-sm sm:max-w-md">
-              <div className="relative aspect-square w-full rounded-2xl bg-gradient-to-br from-[#C2366F]/10 to-[#8A1D4B]/10 p-1">
-                <div className="absolute -left-3 -top-3 md:-left-4 md:-top-4 h-16 w-16 md:h-24 md:w-24 rounded-full bg-[#C2366F]/20 blur-2xl"></div>
-
-                <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 h-20 w-20 md:h-32 md:w-32 rounded-full bg-[#8A1D4B]/20 blur-2xl"></div>
-
-                <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#C2366F]/20 to-[#8A1D4B]/20 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <Users
-                      size={40}
-                      className="text-[#C2366F] mx-auto mb-2 md:size-48"
-                    />
-                    <span className="text-xs md:text-sm font-medium text-[#C2366F] underline decoration-[#C2366F] decoration-2 underline-offset-4">
-                      CEO Photo
-                    </span>
-                  </div>
-                </div>
+            <div className="order-2 lg:order-1 mx-auto w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px]">
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/images/WhatsApp Image 2026-08-11 at 2.23.12 PM-Photoroom.png"
+                  alt="Wahab Yunus - CEO PNY Group"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 rounded-xl bg-[#C2366F] px-4 py-2 md:px-6 md:py-3 text-white shadow-xl">
-                <div className="flex items-center gap-2">
-                  <Award size={16} className="md:size-20" />
-                  <span className="text-xs md:text-sm font-semibold">
-                    CEO & Founder
-                  </span>
-                </div>
-              </div>
+              <div className="w-24 h-1 bg-[#C2366F] rounded-full mx-auto mt-4"></div>
             </div>
 
             <div className="order-1 lg:order-2">
 
               <div className="flex items-center gap-4 mb-1">
                 <div className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-[#C2366F]/10 flex-shrink-0">
-                  <Users size={18} className="text-[#C2366F] md:size-20" />
+                   <User size={18} className="text-[#C2366F] md:size-20" />
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
@@ -326,137 +405,19 @@ const About = () => {
             </div>
 
             <div className="relative mx-auto w-full max-w-sm sm:max-w-md">
-              <div className="relative aspect-square w-full rounded-2xl bg-gradient-to-br from-[#C2366F]/10 to-[#8A1D4B]/10 p-1">
+              <div className="relative aspect-square w-full rounded-2xl bg-gradient-to-br from-[#C2366F]/10 to-[#8A1D4B]/10 p-1 overflow-hidden">
                 <div className="absolute -left-3 -top-3 md:-left-4 md:-top-4 h-16 w-16 md:h-24 md:w-24 rounded-full bg-[#C2366F]/20 blur-2xl"></div>
-
                 <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 h-20 w-20 md:h-32 md:w-32 rounded-full bg-[#8A1D4B]/20 blur-2xl"></div>
-
-                <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#C2366F]/20 to-[#8A1D4B]/20 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <User
-                      size={40}
-                      className="text-[#C2366F] mx-auto mb-2 md:size-48"
-                    />
-                    <span className="text-xs md:text-sm font-medium text-[#C2366F] underline decoration-[#C2366F] decoration-2 underline-offset-4">
-                      CEO Photo
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 rounded-xl bg-[#C2366F] px-4 py-2 md:px-6 md:py-3 text-white shadow-xl">
-                <div className="flex items-center gap-2">
-                  <User size={16} className="md:size-20" />
-                  <span className="text-xs md:text-sm font-semibold">
-                    CEO PNY Pink
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          PROJECT HEAD - Mahwish Tanveer
-      ===================================================== */}
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
-          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
-
-            <div className="relative mx-auto w-full max-w-sm sm:max-w-md">
-              <div className="relative aspect-square w-full rounded-2xl bg-gradient-to-br from-[#C2366F]/10 to-[#8A1D4B]/10 p-1">
-                <div className="absolute -left-3 -top-3 md:-left-4 md:-top-4 h-16 w-16 md:h-24 md:w-24 rounded-full bg-[#C2366F]/20 blur-2xl"></div>
-
-                <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 h-20 w-20 md:h-32 md:w-32 rounded-full bg-[#8A1D4B]/20 blur-2xl"></div>
-
-                <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#C2366F]/20 to-[#8A1D4B]/20 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <GraduationCap
-                      size={40}
-                      className="text-[#C2366F] mx-auto mb-2 md:size-48"
-                    />
-                    <span className="text-xs md:text-sm font-medium text-[#C2366F] underline decoration-[#C2366F] decoration-2 underline-offset-4">
-                      Project Head Photo
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 rounded-xl bg-[#C2366F] px-4 py-2 md:px-6 md:py-3 text-white shadow-xl">
-                <div className="flex items-center gap-2">
-                  <Briefcase size={16} className="md:size-20" />
-                  <span className="text-xs md:text-sm font-semibold">
-                    Project Head
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="flex items-start gap-4 mb-1">
-                <div className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-[#C2366F]/10 flex-shrink-0 mt-0.5">
-                  <GraduationCap
-                    size={18}
-                    className="text-[#C2366F] md:size-20"
+                
+                <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-br from-[#C2366F]/20 to-[#8A1D4B]/20">
+                  <User
+                    size={40}
+                    className="text-[#C2366F] mx-auto mb-2 md:size-48"
                   />
+                  <span className="text-xs md:text-sm font-medium text-[#C2366F] underline decoration-[#C2366F] decoration-2 underline-offset-4 absolute bottom-4">
+                    CEO Photo
+                  </span>
                 </div>
-
-                <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
-                    Project Head of{" "}
-                    <span className="text-[#C2366F] border-b-2 border-[#C2366F] pb-1">
-                      PNY Pink
-                    </span>
-                  </h2>
-                </div>
-              </div>
-
-              <h3 className="mb-3 md:mb-4 text-lg md:text-xl font-semibold text-[#C2366F] ml-0 md:ml-[60px]">
-                Mahwish Tanveer
-              </h3>
-
-              <div className="mb-4 md:mb-6 space-y-3 md:space-y-4 text-sm md:text-base text-gray-600">
-                <p>
-                  Mahwish Tanveer is a self-learner who completed her MSc
-                  degree in Mass Communication. She started her career with
-                  different institutions to make her place in the field and has
-                  been working for the last 5 years.
-                </p>
-
-                <p>
-                  She is also a graphic designer and social media expert with a
-                  grip on four different software applications. She leads the
-                  PNY Pink team and motivates young women to be self-oriented
-                  and confident in their work.
-                </p>
-
-                <p className="font-medium text-gray-700">
-                  <span className="text-[#C2366F]">
-                    "
-                  </span>
-                  Don't rely on a degree alone; learn new skills to become part
-                  of this timely changing world.
-                  <span className="text-[#C2366F]">
-                    "
-                  </span>
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-1.5 md:gap-2">
-                {[
-                  "Mass Communication",
-                  "Graphic Design",
-                  "Social Media Expert",
-                  "Team Leadership",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-[#22C55E]/10 px-2 py-0.5 md:px-4 md:py-1.5 text-xs md:text-sm font-medium text-[#22C55E]"
-                  >
-                    {skill}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
@@ -809,37 +770,56 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          CTA SECTION - Simple Clean Design
+          CTA SECTION - IMAGE ON RIGHT
       ===================================================== */}
       <section className="relative overflow-hidden bg-white py-12 md:py-16 border-t border-gray-100">
-        <div className="container relative mx-auto max-w-4xl px-4 sm:px-5 text-center lg:px-8">
+        <div className="container relative mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+          
+          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
+            
+            {/* Left Content */}
+            <div className="text-center lg:text-left">
+              {/* Pink Accent Line */}
+              <div className="w-20 h-1 bg-[#C2366F] rounded-full mx-auto lg:mx-0 mb-6"></div>
 
-          {/* Pink Accent Line */}
-          <div className="w-20 h-1 bg-[#C2366F] rounded-full mx-auto mb-6"></div>
+              <h2 className="mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+                Ready to Start Your Journey?
+              </h2>
 
-          <h2 className="mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
-            Ready to Start Your Journey?
-          </h2>
+              <p className="mb-6 md:mb-8 text-base md:text-lg text-gray-600">
+                Join PNY Pink today and take the first step towards a brighter
+                future.
+              </p>
 
-          <p className="mb-6 md:mb-8 text-base md:text-lg text-gray-600 px-4">
-            Join PNY Pink today and take the first step towards a brighter
-            future.
-          </p>
+              <div className="flex flex-col sm:flex-row items-center lg:justify-start gap-3 md:gap-4">
+                <Link
+                  href="/enroll"
+                  className="w-full sm:w-auto rounded-xl bg-[#C2366F] px-8 py-3.5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#A62258] hover:shadow-xl"
+                >
+                  Enroll Now
+                </Link>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
-            <Link
-              href="/enroll"
-              className="w-full sm:w-auto rounded-xl bg-[#C2366F] px-8 py-3.5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#A62258] hover:shadow-xl"
-            >
-              Enroll Now
-            </Link>
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto rounded-xl border-2 border-[#C2366F] px-8 py-3.5 font-semibold text-[#C2366F] transition-all duration-300 hover:scale-105 hover:bg-[#C2366F] hover:text-white hover:shadow-xl"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
 
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto rounded-xl border-2 border-[#C2366F] px-8 py-3.5 font-semibold text-[#C2366F] transition-all duration-300 hover:scale-105 hover:bg-[#C2366F] hover:text-white hover:shadow-xl"
-            >
-              Contact Us
-            </Link>
+            {/* Right Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[450px] aspect-square">
+                <Image
+                  src="/images/ChatGPT Image Aug 11, 2026, 02_38_27 PM.png"
+                  alt="PNY Pink Journey"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
