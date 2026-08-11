@@ -646,51 +646,68 @@ export default function Home() {
 
 
 {/* ======================================================
-    SECTION: CLIENT TESTIMONIALS (PROFESSIONAL & DECENT)
-    - Soft gradient pink background with subtle pattern
-    - Left → Right → Left layout
-    - Premium card design with glassmorphism
-    - Client images (.jpeg)
+    SECTION: CLIENT TESTIMONIALS (REDUCED PADDING)
+    - Raspberry Pink (#C2366F) as hero color
+    - Stunning gradient with pink tones
+    - Minimal padding - clean & elegant
 ====================================================== */}
-<section className="py-16 md:py-24 bg-gradient-to-br from-[#F8E8F0] via-[#F3B6CC] to-[#F8E8F0] relative overflow-hidden">
-  {/* Subtle pattern overlay */}
-  <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
-    backgroundImage: `radial-gradient(circle at 20px 20px, #C2366F 2px, transparent 0)`,
-    backgroundSize: '40px 40px'
-  }}></div>
+<section className="relative py-10 md:py-14 overflow-hidden">
   
-  {/* Decorative circles */}
-  <div className="absolute top-0 right-0 w-64 h-64 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
+  {/* Main Background - Rich Pink Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#FFF0F6] via-[#FFE0EC] to-[#F8D0E0]"></div>
+  
+  {/* Large Glowing Raspberry Pink Orbs - Soft Background */}
+  <div className="absolute top-[-200px] right-[-150px] w-[700px] h-[700px] bg-[#C2366F]/15 rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-[-200px] left-[-150px] w-[700px] h-[700px] bg-[#C2366F]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  
+  {/* Sparkle Particles - Small dots */}
+  <div className="absolute top-12 left-1/4 w-2 h-2 bg-[#C2366F]/20 rounded-full blur-sm"></div>
+  <div className="absolute bottom-12 right-1/4 w-2 h-2 bg-[#C2366F]/15 rounded-full blur-sm"></div>
+  <div className="absolute top-1/3 left-8 w-1.5 h-1.5 bg-[#C2366F]/20 rounded-full blur-sm"></div>
+  <div className="absolute bottom-1/3 right-8 w-1.5 h-1.5 bg-[#C2366F]/15 rounded-full blur-sm"></div>
+  <div className="absolute top-20 right-1/3 w-2 h-2 bg-[#C2366F]/20 rounded-full blur-sm"></div>
+  <div className="absolute bottom-20 left-1/3 w-2 h-2 bg-[#C2366F]/15 rounded-full blur-sm"></div>
 
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    {/* Heading */}
-    <div className="text-center max-w-2xl mx-auto mb-14">
-      <span className="inline-block text-sm font-semibold text-[#C2366F] tracking-wider uppercase mb-2">
-        Testimonials
-      </span>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#252525] leading-tight">
-        What Our Clients Say
+    
+    {/* ====== HEADING ====== */}
+    <div className="text-center max-w-2xl mx-auto mb-10">
+      
+      {/* Main Heading with Pink Highlight */}
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1e1e2a] leading-tight">
+        What Our{' '}
+        <span className="text-[#C2366F] relative inline-block">
+          Clients
+          <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#C2366F]/30 rounded-full"></span>
+        </span>{' '}
+        Say
       </h2>
-      <div className="w-16 h-1 bg-gradient-to-r from-[#C2366F] to-[#8A1D4B] mx-auto mt-4 rounded-full"></div>
-      <p className="text-[#252525]/50 text-sm mt-4 max-w-sm mx-auto font-light tracking-wide">
+      
+      <p className="text-[#4a4a5a]/60 text-sm mt-4 max-w-sm mx-auto font-light tracking-wide">
         Real stories from our students who turned their passion into profession
       </p>
     </div>
 
-    {/* Testimonials Cards - Zig Zag Layout */}
-    <div className="max-w-5xl mx-auto space-y-8 md:space-y-10">
+    {/* ====== TESTIMONIALS CARDS ====== */}
+    <div className="max-w-5xl mx-auto space-y-6 md:space-y-8">
       
       {/* Testimonial 1 - LEFT */}
       <div className="flex justify-start">
-        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.15)] transition-all duration-500 hover:-translate-y-1.5 border border-white/50 hover:border-[#C2366F]/30 group">
-          {/* Quote mark */}
-          <div className="absolute top-4 right-6 text-[#C2366F]/10 text-5xl font-serif hidden md:block">"</div>
+        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-[0_8px_40px_rgba(194,54,111,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.25)] transition-all duration-500 hover:-translate-y-2 border border-white/60 hover:border-[#C2366F]/30 group relative">
           
-          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+          {/* Top Glow Line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C2366F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
+          
+          {/* Large Quote Mark */}
+          <div className="absolute top-3 right-6 text-[#C2366F]/8 text-7xl font-serif hidden md:block leading-none">"</div>
+          
+          {/* Raspberry Pink Glow on Hover */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C2366F]/5 via-transparent to-[#C2366F]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+          
+          <div className="flex flex-col md:flex-row items-start gap-5 md:gap-6 relative">
             {/* Client Image */}
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#C2366F]/30 group-hover:border-[#C2366F] shadow-md group-hover:shadow-[0_0_20px_rgba(194,54,111,0.2)] transition-all duration-300">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 border-[#C2366F]/20 group-hover:border-[#C2366F] shadow-lg group-hover:shadow-[0_0_40px_rgba(194,54,111,0.3)] transition-all duration-300">
                 <img
                   src="/images/client1.jpeg"
                   alt="Farrah Ibrahim"
@@ -700,10 +717,10 @@ export default function Home() {
             </div>
             {/* Content */}
             <div className="flex-1">
-              <h4 className="text-base md:text-lg font-bold text-[#252525] group-hover:text-[#C2366F] transition-colors duration-300">
+              <h4 className="text-base md:text-lg font-bold text-[#1e1e2a] group-hover:text-[#C2366F] transition-colors duration-300">
                 Farrah Ibrahim
               </h4>
-              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-1.5">
+              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-2">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C2366F]"></span>
                 Be Your Own Beauty Expert
               </p>
@@ -717,14 +734,15 @@ export default function Home() {
 
       {/* Testimonial 2 - RIGHT */}
       <div className="flex justify-end">
-        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.15)] transition-all duration-500 hover:-translate-y-1.5 border border-white/50 hover:border-[#C2366F]/30 group">
-          {/* Quote mark */}
-          <div className="absolute top-4 right-6 text-[#C2366F]/10 text-5xl font-serif hidden md:block">"</div>
+        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-[0_8px_40px_rgba(194,54,111,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.25)] transition-all duration-500 hover:-translate-y-2 border border-white/60 hover:border-[#C2366F]/30 group relative">
           
-          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
-            {/* Client Image */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C2366F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
+          <div className="absolute top-3 right-6 text-[#C2366F]/8 text-7xl font-serif hidden md:block leading-none">"</div>
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C2366F]/5 via-transparent to-[#C2366F]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+          
+          <div className="flex flex-col md:flex-row items-start gap-5 md:gap-6 relative">
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#C2366F]/30 group-hover:border-[#C2366F] shadow-md group-hover:shadow-[0_0_20px_rgba(194,54,111,0.2)] transition-all duration-300">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 border-[#C2366F]/20 group-hover:border-[#C2366F] shadow-lg group-hover:shadow-[0_0_40px_rgba(194,54,111,0.3)] transition-all duration-300">
                 <img
                   src="/images/client2.jpg"
                   alt="Maham Ali"
@@ -732,12 +750,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            {/* Content */}
             <div className="flex-1">
-              <h4 className="text-base md:text-lg font-bold text-[#252525] group-hover:text-[#C2366F] transition-colors duration-300">
+              <h4 className="text-base md:text-lg font-bold text-[#1e1e2a] group-hover:text-[#C2366F] transition-colors duration-300">
                 Maham Ali
               </h4>
-              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-1.5">
+              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-2">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C2366F]"></span>
                 Be Your Own Beauty Expert
               </p>
@@ -751,14 +768,15 @@ export default function Home() {
 
       {/* Testimonial 3 - LEFT */}
       <div className="flex justify-start">
-        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.15)] transition-all duration-500 hover:-translate-y-1.5 border border-white/50 hover:border-[#C2366F]/30 group">
-          {/* Quote mark */}
-          <div className="absolute top-4 right-6 text-[#C2366F]/10 text-5xl font-serif hidden md:block">"</div>
+        <div className="w-[95%] md:w-[85%] lg:w-[78%] bg-white/90 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-[0_8px_40px_rgba(194,54,111,0.08)] hover:shadow-[0_20px_60px_rgba(194,54,111,0.25)] transition-all duration-500 hover:-translate-y-2 border border-white/60 hover:border-[#C2366F]/30 group relative">
           
-          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
-            {/* Client Image */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C2366F] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
+          <div className="absolute top-3 right-6 text-[#C2366F]/8 text-7xl font-serif hidden md:block leading-none">"</div>
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C2366F]/5 via-transparent to-[#C2366F]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
+          
+          <div className="flex flex-col md:flex-row items-start gap-5 md:gap-6 relative">
             <div className="flex-shrink-0">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#C2366F]/30 group-hover:border-[#C2366F] shadow-md group-hover:shadow-[0_0_20px_rgba(194,54,111,0.2)] transition-all duration-300">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 border-[#C2366F]/20 group-hover:border-[#C2366F] shadow-lg group-hover:shadow-[0_0_40px_rgba(194,54,111,0.3)] transition-all duration-300">
                 <img
                   src="/images/client3.jpeg"
                   alt="Waliya Najeeb"
@@ -766,12 +784,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            {/* Content */}
             <div className="flex-1">
-              <h4 className="text-base md:text-lg font-bold text-[#252525] group-hover:text-[#C2366F] transition-colors duration-300">
+              <h4 className="text-base md:text-lg font-bold text-[#1e1e2a] group-hover:text-[#C2366F] transition-colors duration-300">
                 Waliya Najeeb
               </h4>
-              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-1.5">
+              <p className="text-sm text-[#C2366F] font-medium mb-3 flex items-center gap-2">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#C2366F]"></span>
                 Be Your Own Beauty Expert
               </p>
