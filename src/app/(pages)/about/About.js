@@ -219,115 +219,161 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          CEO SECTION - Wahab Yunus
+          CEO SECTION - Wahab Yunus (BIGGER IMAGE)
       ===================================================== */}
       <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
-          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
+  <div className="container mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+    <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
 
-            <div className="order-2 lg:order-1 mx-auto w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px]">
-              <div className="relative aspect-square w-full">
-                <Image
-                  src="/images/WhatsApp Image 2026-08-11 at 2.23.12 PM-Photoroom.png"
-                  alt="Wahab Yunus - CEO PNY Group"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <div className="w-24 h-1 bg-[#C2366F] rounded-full mx-auto mt-4"></div>
-            </div>
+      {/* ================= LEFT IMAGE ================= */}
+      <div className="order-2 mx-auto w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px] lg:order-1">
 
-            <div className="order-1 lg:order-2">
+        <div className="relative aspect-square w-full">
 
-              <div className="flex items-center gap-4 mb-1">
-                <div className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl bg-[#C2366F]/10 flex-shrink-0">
-                   <User size={18} className="text-[#C2366F] md:size-20" />
-                </div>
+          <Image
+            src="/images/WhatsApp Image 2026-08-11 at 2.23.12 PM-Photoroom.png"
+            alt="Wahab Yunus - CEO PNY Group"
+            fill
+            className="object-contain"
+            priority
+          />
 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
-                  Meet Our{" "}
-                  <span className="text-[#C2366F] border-b-2 border-[#C2366F] pb-1">
-                    CEO
-                  </span>
-                </h2>
-              </div>
+          {/* WIDE LINE UNDER IMAGE */}
+          <div
+            className="
+              absolute
+              bottom-0
+              left-1/2
+              h-1
+              w-[80%]
+              -translate-x-1/2
+              rounded-full
+              bg-[#C2366F]
+            "
+          />
 
-              <h3 className="mb-3 md:mb-4 text-lg md:text-xl font-semibold text-[#C2366F] ml-0 md:ml-[60px]">
-                Mr. Wahab Yunus
-              </h3>
-
-              <div className="mb-4 md:mb-6 space-y-3 md:space-y-4 text-sm md:text-base text-gray-600">
-                <p>
-                  Mr. Wahab Yunus, C.E.O of PNY Group of Companies, holds an MBA
-                  from the Institute of Management Sciences (IMS), specializing
-                  in Marketing. With over 10 years of experience as a Marketing
-                  Manager in top multinational companies, he founded PNY
-                  Trainings in 2014.
-                </p>
-
-                <p>
-                  He is undoubtedly a pioneer of Digital & Social Media Training
-                  in Pakistan. His institute now offers more than 50+ latest
-                  courses, and he is very clear about his aim:{" "}
-                  <span className="font-semibold text-[#C2366F]">
-                    "The key to success is only hard work & hard work."
-                  </span>
-                </p>
-
-                <p>
-                  Specialized in Digital & Social Media Marketing, Advanced
-                  Facebook Marketing, SEO, Google Ads & Google Analytics, he has
-                  worked as a consultant with different brands and provides
-                  corporate and in-house training.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 md:gap-3">
-                {[
-                  "50+ Latest Courses",
-                  "Digital Marketing Expert",
-                  "Corporate Trainer",
-                  "Multi-Project Leader",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2 text-xs md:text-sm text-gray-700"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="text-[#C2366F] md:size-16"
-                    />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 md:mt-6 rounded-xl bg-pink-50/80 p-3 md:p-4 border border-pink-100/50">
-                <h4 className="mb-2 text-sm md:text-base font-semibold text-gray-800">
-                  Projects Under PNY Group:
-                </h4>
-
-                <div className="flex flex-wrap gap-1.5 md:gap-2">
-                  {[
-                    "PNY Pink",
-                    "ONAJAH (Online Learning)",
-                    "PITA (Non-Profit)",
-                    "PNY Advertising",
-                  ].map((project) => (
-                    <span
-                      key={project}
-                      className="rounded-full bg-[#22C55E]/10 px-2 py-0.5 md:px-3 md:py-1 text-xs font-medium text-[#22C55E]"
-                    >
-                      {project}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
+
+
+      {/* ================= RIGHT CONTENT ================= */}
+      <div className="order-1 lg:order-2">
+
+        {/* Heading */}
+        <div className="mb-1 flex items-center gap-4">
+
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#C2366F]/10 md:h-14 md:w-14">
+            <User
+              size={18}
+              className="text-[#C2366F] md:size-20"
+            />
+          </div>
+
+          <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-4xl">
+            Meet Our{" "}
+            <span className="border-b-2 border-[#C2366F] pb-1 text-[#C2366F]">
+              CEO
+            </span>
+          </h2>
+
+        </div>
+
+
+        {/* CEO Name */}
+        <h3 className="mb-3 ml-0 text-lg font-semibold text-[#C2366F] md:mb-4 md:ml-[60px] md:text-xl">
+          Mr. Wahab Yunus
+        </h3>
+
+
+        {/* Description */}
+        <div className="mb-4 space-y-3 text-sm text-gray-600 md:mb-6 md:space-y-4 md:text-base">
+
+          <p>
+            Mr. Wahab Yunus, C.E.O of PNY Group of Companies, holds an MBA
+            from the Institute of Management Sciences (IMS), specializing
+            in Marketing. With over 10 years of experience as a Marketing
+            Manager in top multinational companies, he founded PNY
+            Trainings in 2014.
+          </p>
+
+          <p>
+            He is undoubtedly a pioneer of Digital & Social Media Training
+            in Pakistan. His institute now offers more than 50+ latest
+            courses, and he is very clear about his aim:{" "}
+            <span className="font-semibold text-[#C2366F]">
+              "The key to success is only hard work & hard work."
+            </span>
+          </p>
+
+          <p>
+            Specialized in Digital & Social Media Marketing, Advanced
+            Facebook Marketing, SEO, Google Ads & Google Analytics, he has
+            worked as a consultant with different brands and provides
+            corporate and in-house training.
+          </p>
+
+        </div>
+
+
+        {/* ================= FEATURES ================= */}
+        <div className="grid grid-cols-2 gap-2 md:gap-3">
+
+          {[
+            "50+ Latest Courses",
+            "Digital Marketing Expert",
+            "Corporate Trainer",
+            "Multi-Project Leader",
+          ].map((item) => (
+            <div
+              key={item}
+              className="flex items-center gap-2 text-xs text-gray-700 md:text-sm"
+            >
+
+              <ChevronRight
+                size={14}
+                className="flex-shrink-0 text-[#C2366F] md:size-16"
+              />
+
+              <span>{item}</span>
+
+            </div>
+          ))}
+
+        </div>
+
+
+        {/* ================= PROJECTS ================= */}
+        <div className="mt-4 rounded-xl border border-pink-100/50 bg-pink-50/80 p-3 md:mt-6 md:p-4">
+
+          <h4 className="mb-2 text-sm font-semibold text-gray-800 md:text-base">
+            Projects Under PNY Group:
+          </h4>
+
+          <div className="flex flex-wrap gap-1.5 md:gap-2">
+
+            {[
+              "PNY Pink",
+              "ONAJAH (Online Learning)",
+              "PITA (Non-Profit)",
+              "PNY Advertising",
+            ].map((project) => (
+              <span
+                key={project}
+                className="rounded-full bg-[#22C55E]/10 px-2 py-0.5 text-xs font-medium text-[#22C55E] md:px-3 md:py-1"
+              >
+                {project}
+              </span>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* =====================================================
           CEO OF PNY PINK - Samina Wahab
