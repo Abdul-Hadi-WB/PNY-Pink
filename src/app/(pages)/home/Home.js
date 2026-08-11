@@ -433,17 +433,16 @@ export default function Home() {
 </section>
       
 
-      {/*SECTION 4: FEATURED COURSES */}
 {/* ======================================================
-    SECTION 4: FEATURED COURSES (PROPER BOTTOM SPACING)
-    - Cards properly spaced from bottom
+    SECTION 4: FEATURED COURSES (REDUCED PADDING)
+    - Cards properly spaced
     - Clean, professional design
-    - No attached feel
+    - Minimal padding
 ====================================================== */}
-<section className="py-12 md:py-16 pb-16 md:pb-24 bg-white overflow-hidden">
+<section className="py-6 md:py-8 pb-10 md:pb-12 bg-white overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {/* Heading */}
-    <div className="text-center mb-12">
+    <div className="text-center mb-8">
       <h2 className="text-4xl md:text-5xl font-bold text-[#1e1e2a]">
         Featured <span className="text-[#C2366F]">Courses</span>
       </h2>
@@ -454,7 +453,7 @@ export default function Home() {
     </div>
 
     {/* Carousel */}
-    <div className="" ref={emblaRef}>
+    <div className="overflow-hidden" ref={emblaRef}>
       <div className="flex" style={{ gap: '24px' }}>
         {featuredCourses.map((course) => (
           <div
@@ -511,7 +510,7 @@ export default function Home() {
     </div>
 
     {/* Navigation */}
-    <div className="flex justify-center items-center gap-4 mt-10">
+    <div className="flex justify-center items-center gap-4 mt-8">
       <button
         onClick={scrollPrev}
         className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-[#C2366F]/20 text-[#C2366F] hover:bg-[#C2366F] hover:text-white hover:border-[#C2366F] transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105"
@@ -542,11 +541,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-
-
-
-      
+   
   {/* ======================================================
     SECTION: OUR COLLABORATIVE PARTNER (LARGER LOGOS)
     - Animation from global CSS
