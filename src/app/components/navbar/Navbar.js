@@ -26,10 +26,18 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
 
+  // ✅ Nav links with correct hrefs
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Blog", href: "/blog" },
+  ];
+
   return (
     <header>
       {/* =====================================================
-          TOP BAR
+          TOP BAR (same as before)
       ===================================================== */}
       <div
         className="
@@ -144,250 +152,69 @@ export default function Navbar() {
               <ChevronDown size={16} className={`transition-transform duration-300 ${categoriesOpen ? "rotate-180" : ""}`} />
             </button>
 
-           {/* CATEGORY DROPDOWN */}
-{categoriesOpen && (
-  <div
-    className="
-      absolute left-0 top-[calc(100%+8px)]
-      z-50 w-[245px]
-      overflow-hidden
-      rounded-xl
-      border border-pink-100
-      bg-white
-      shadow-[0_14px_35px_rgba(194,54,111,0.18)]
-    "
-  >
-    {/* HEADER */}
-    <div
-      className="
-        bg-gradient-to-r
-        from-[#E86D9B]
-        via-[#C2366F]
-        to-[#8A1D4B]
-        px-4 py-3
-        text-[13px] font-bold text-white
-      "
-    >
-      Explore Categories
-    </div>
+            {/* CATEGORY DROPDOWN */}
+            {categoriesOpen && (
+              <div
+                className="
+                  absolute left-0 top-[calc(100%+8px)]
+                  z-50 w-[245px]
+                  overflow-hidden
+                  rounded-xl
+                  border border-pink-100
+                  bg-white
+                  shadow-[0_14px_35px_rgba(194,54,111,0.18)]
+                "
+              >
+                <div
+                  className="
+                    bg-gradient-to-r
+                    from-[#E86D9B]
+                    via-[#C2366F]
+                    to-[#8A1D4B]
+                    px-4 py-3
+                    text-[13px] font-bold text-white
+                  "
+                >
+                  Explore Categories
+                </div>
 
-    {/* BEAUTICIAN */}
-    <Link
-      href="/categories/beautician"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Sparkles size={17} className="text-[#C2366F]" />
-        Beautician
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* SKIN */}
-    <Link
-      href="/categories/skin"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Circle size={17} className="text-[#C2366F]" />
-        Skin
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* MAKEUP */}
-    <Link
-      href="/categories/makeup"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Palette size={17} className="text-[#C2366F]" />
-        Makeup
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* HAIR */}
-    <Link
-      href="/categories/hair"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Scissors size={17} className="text-[#C2366F]" />
-        Hair
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* NAIL ART */}
-    <Link
-      href="/categories/nail-art"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Flower2 size={17} className="text-[#C2366F]" />
-        Nail Art
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* EYELASH */}
-    <Link
-      href="/categories/eyelash"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Eye size={17} className="text-[#C2366F]" />
-        Eyelash
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* COOKING & BAKING */}
-    <Link
-      href="/categories/cooking-baking"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Utensils size={17} className="text-[#C2366F]" />
-        Cooking & Baking
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-
-    {/* SHORT COURSES */}
-    <Link
-      href="/categories/short-courses"
-      onClick={() => setCategoriesOpen(false)}
-      className="
-        group flex items-center justify-between
-        px-4 py-2.5
-        transition-all duration-200
-        hover:bg-[#FFF0F6]
-      "
-    >
-      <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
-        <Megaphone size={17} className="text-[#C2366F]" />
-        Short Courses
-      </span>
-
-      <ChevronRight
-        size={15}
-        className="
-          text-gray-300
-          transition-all duration-200
-          group-hover:translate-x-1
-          group-hover:text-[#C2366F]
-        "
-      />
-    </Link>
-  </div>
-
+                {[
+                  { label: "Beautician", href: "/categories/beautician", icon: Sparkles },
+                  { label: "Skin", href: "/categories/skin", icon: Circle },
+                  { label: "Makeup", href: "/categories/makeup", icon: Palette },
+                  { label: "Hair", href: "/categories/hair", icon: Scissors },
+                  { label: "Nail Art", href: "/categories/nail-art", icon: Flower2 },
+                  { label: "Eyelash", href: "/categories/eyelash", icon: Eye },
+                  { label: "Cooking & Baking", href: "/categories/cooking-baking", icon: Utensils },
+                  { label: "Short Courses", href: "/categories/short-courses", icon: Megaphone },
+                ].map(({ label, href, icon: Icon }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    onClick={() => setCategoriesOpen(false)}
+                    className="
+                      group flex items-center justify-between
+                      px-4 py-2.5
+                      transition-all duration-200
+                      hover:bg-[#FFF0F6]
+                    "
+                  >
+                    <span className="flex items-center gap-2.5 text-[14px] font-medium text-gray-700">
+                      <Icon size={17} className="text-[#C2366F]" />
+                      {label}
+                    </span>
+                    <ChevronRight
+                      size={15}
+                      className="
+                        text-gray-300
+                        transition-all duration-200
+                        group-hover:translate-x-1
+                        group-hover:text-[#C2366F]
+                      "
+                    />
+                  </Link>
+                ))}
+              </div>
             )}
           </div>
 
@@ -423,17 +250,18 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ===== NAV LINKS ===== */}
+          {/* ===== NAV LINKS (updated) ===== */}
           <nav className="hidden items-center gap-6 xl:flex">
-            {["Home", "About Us", "Gallery", "Blog"].map((label) => {
-              const href = label === "Home" ? "/" : `/${label.toLowerCase().replace(" ", "-")}`;
-              return (
-                <Link key={label} href={href} className="group relative whitespace-nowrap text-[15px] font-semibold text-gray-800 transition-colors duration-300 hover:text-[#C2366F]">
-                  {label}
-                  <span className="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-[#C2366F] transition-all duration-300 group-hover:w-full" />
-                </Link>
-              );
-            })}
+            {navLinks.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="group relative whitespace-nowrap text-[15px] font-semibold text-gray-800 transition-colors duration-300 hover:text-[#C2366F]"
+              >
+                {label}
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-[#C2366F] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
           </nav>
 
           {/* MOBILE BUTTON */}
@@ -448,7 +276,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ===== MOBILE MENU ===== */}
+        {/* ===== MOBILE MENU (updated) ===== */}
         {mobileOpen && (
           <div
             className="
@@ -462,9 +290,9 @@ export default function Navbar() {
             <div className="flex flex-col gap-1">
               {[
                 ["Home", "/"],
-                ["About Us", "/about"],
+                ["About Us", "/about"],  // ✅ fixed
                 ["Gallery", "/gallery"],
-                ["Blog", "/blogs"],
+                ["Blog", "/blog"],       // ✅ fixed
                 ["Fee Structure", "/fee-structure"],
                 ["Training Schedule", "/training-schedule"],
                 ["Admission", "/admission"],
