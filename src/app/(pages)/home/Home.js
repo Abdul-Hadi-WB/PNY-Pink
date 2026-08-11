@@ -453,7 +453,7 @@ export default function Home() {
     </div>
 
     {/* Carousel */}
-    <div className="overflow-hidden" ref={emblaRef}>
+    <div className="" ref={emblaRef}>
       <div className="flex" style={{ gap: '24px' }}>
         {featuredCourses.map((course) => (
           <div
