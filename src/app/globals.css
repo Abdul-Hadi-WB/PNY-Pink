@@ -300,10 +300,11 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
 
-  /* src/app/globals.css */
-
-/* Marquee Animation for Partner Logos */
+/* ============================================================
+   STEP 9: MARQUEE ANIMATION FOR PARTNER LOGOS
+   ============================================================ */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -323,12 +324,87 @@ html {
 }
 
 
+/* ============================================================
+   STEP 10: FADE IN UP ANIMATION (INTERSECTION OBSERVER)
+   ============================================================ */
 
-/* src/app/globals.css */
+/* Base Animation Class */
+.aos-animate {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Fade Up (Niche se upar) */
+.aos-animate.fade-in-up {
+  transform: translateY(40px);
+}
+.aos-animate.fade-in-up.active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Fade Left (Left se aaye) */
+.aos-animate.fade-in-left {
+  transform: translateX(-40px);
+}
+.aos-animate.fade-in-left.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Fade Right (Right se aaye) */
+.aos-animate.fade-in-right {
+  transform: translateX(40px);
+}
+.aos-animate.fade-in-right.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Zoom In */
+.aos-animate.zoom-in {
+  transform: scale(0.9);
+}
+.aos-animate.zoom-in.active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Flip In */
+.aos-animate.flip-in {
+  transform: rotateY(90deg);
+}
+.aos-animate.flip-in.active {
+  opacity: 1 !important;
+  transform: rotateY(0) !important;
+}
 
 /* ============================================
-   WHAT WE ARE - FADE IN UP ANIMATION
+   DELAY CLASSES
    ============================================ */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+.delay-700 { transition-delay: 0.7s; }
+.delay-800 { transition-delay: 0.8s; }
+.delay-900 { transition-delay: 0.9s; }
+.delay-1000 { transition-delay: 1s; }
+
+/* ============================================
+   DURATION CLASSES
+   ============================================ */
+.duration-500 { transition-duration: 0.5s; }
+.duration-700 { transition-duration: 0.7s; }
+.duration-1000 { transition-duration: 1s; }
+.duration-1200 { transition-duration: 1.2s; }
+
+
+/* ============================================================
+   STEP 11: WHAT WE ARE - FADE IN UP ANIMATION
+   ============================================================ */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -377,7 +453,7 @@ html {
 }
 
 /* ============================================
-   WHAT WE ARE - PULSE ANIMATION
+   PULSE ANIMATION
    ============================================ */
 @keyframes pulse {
   0%, 100% {
@@ -403,7 +479,7 @@ html {
 }
 
 /* ============================================
-   WHAT WE ARE - PING ANIMATION
+   PING ANIMATION
    ============================================ */
 @keyframes ping {
   75%, 100% {
@@ -424,5 +500,4 @@ html {
 }
 .animate-ping.delay-1000 {
   animation-delay: 1s;
-}
 }

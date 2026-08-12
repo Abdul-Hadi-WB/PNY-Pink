@@ -1,16 +1,18 @@
-import React from 'react'
-import Home from './(pages)/home/Home'
-// Static meta title and description
+import React from "react";
+import Home from "./(pages)/home/Home";
+
 export const metadata = {
-  title: 'PNY-Pink',
-  description: 'This is a static meta description for my website homepage. Explore our services and features.',
-}
+  title: "PNY-Pink",
+  description:
+    "This is a static meta description for my website homepage. Explore our services and features.",
+};
+
 const page = () => {
   return (
     <div>
-<Home/>
+      <Home />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
