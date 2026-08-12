@@ -919,8 +919,7 @@ const Blogs = () => {
         <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-4 md:mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm px-4 py-2">
-              <Sparkles size={16} className="text-[#C2366F]" />
-              <span className="text-sm font-medium text-[#C2366F]">Our Blog</span>
+             
             </div>
             <h1 className="mb-3 md:mb-4 text-3xl font-bold text-gray-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] sm:text-4xl md:text-5xl lg:text-6xl">
               Latest <span className="text-[#C2366F]">Insights</span> & Stories
