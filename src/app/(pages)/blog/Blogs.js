@@ -908,7 +908,7 @@ const Blogs = () => {
           HERO SECTION WITH BANNER IMAGE
       ===================================================== */}
       <section 
-        className="relative overflow-hidden py-20 md:py-24 lg:py-28"
+        className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-28"
         style={{
           backgroundImage: `url('/images/Banner2.png')`,
           backgroundSize: 'cover',
@@ -918,13 +918,14 @@ const Blogs = () => {
       >
         <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4 md:mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm px-4 py-2">
-             
+            <div className="mb-3 sm:mb-4 md:mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2">
+              <Sparkles size={14} className="text-[#C2366F] sm:size-[16px]" />
+              <span className="text-[10px] sm:text-xs font-medium text-gray-700">Stay Inspired</span>
             </div>
-            <h1 className="mb-3 md:mb-4 text-3xl font-bold text-gray-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="mb-2 sm:mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">
               Latest <span className="text-[#C2366F]">Insights</span> & Stories
             </h1>
-            <p className="mx-auto max-w-2xl text-base text-gray-700 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] sm:text-lg md:text-xl">
+            <p className="mx-auto max-w-2xl text-sm sm:text-base md:text-lg xl:text-xl text-gray-700 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] px-4">
               Discover expert tips, trends, and inspiring stories from the world of beauty, skills, and women empowerment.
             </p>
           </div>
@@ -934,14 +935,14 @@ const Blogs = () => {
       {/* =====================================================
           CATEGORY FILTER
       ===================================================== */}
-      <section className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-3 md:py-4">
-        <div className="container mx-auto max-w-7xl px-4 md:px-5 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 lg:gap-3">
+      <section className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-2 sm:py-3 md:py-4">
+        <div className="container mx-auto max-w-7xl px-3 sm:px-4 md:px-5 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1.5 md:px-4 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                   selectedCategory === category
                     ? "bg-[#C2366F] text-white shadow-lg shadow-pink-500/30"
                     : "bg-gray-100 text-gray-600 hover:bg-[#C2366F]/10 hover:text-[#C2366F]"
@@ -957,16 +958,16 @@ const Blogs = () => {
       {/* =====================================================
           BLOG GRID - FIXED IMAGE DISPLAY
       ===================================================== */}
-      <section className="py-10 md:py-16">
-        <div className="container mx-auto max-w-7xl px-4 md:px-5 lg:px-8">
-          <div className="grid gap-5 md:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-8 sm:py-10 md:py-16">
+        <div className="container mx-auto max-w-7xl px-3 sm:px-4 md:px-5 lg:px-8">
+          <div className="grid gap-4 sm:gap-5 md:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {filteredPosts.slice(0, visiblePosts).map((post, index) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
                 {/* Image Container - Fixed to show full image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
@@ -979,48 +980,49 @@ const Blogs = () => {
                   />
                   
                   {/* Category Badge */}
-                  <span className="absolute top-3 left-3 md:top-4 md:left-4 rounded-full bg-[#C2366F] px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-medium text-white shadow-lg z-10">
+                  <span className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-4 md:left-4 rounded-full bg-[#C2366F] px-1.5 py-0.5 sm:px-2 sm:py-0.5 md:px-3 md:py-1 text-[8px] sm:text-[10px] md:text-xs font-medium text-white shadow-lg z-10">
                     {post.category}
                   </span>
 
                   {/* Read Time */}
-                  <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs text-white backdrop-blur-sm z-10">
-                    <Clock size={10} className="md:size-12" />
+                  <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 md:bottom-4 md:right-4 flex items-center gap-0.5 sm:gap-1 rounded-full bg-black/60 px-1.5 py-0.5 sm:px-2 sm:py-0.5 md:px-3 md:py-1 text-[8px] sm:text-[10px] md:text-xs text-white backdrop-blur-sm z-10">
+                    <Clock size={8} className="sm:size-[10px] md:size-12" />
                     <span>{post.readTime}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-4 md:p-5 lg:p-6">
+                <div className="p-3 sm:p-4 md:p-5 lg:p-6">
                   {/* Date & Author */}
-                  <div className="mb-2 md:mb-3 flex items-center justify-between text-[10px] md:text-xs text-gray-500">
-                    <div className="flex items-center gap-1">
-                      <Calendar size={12} className="text-[#C2366F] md:size-14" />
+                  <div className="mb-1.5 sm:mb-2 md:mb-3 flex flex-wrap items-center justify-between gap-1 text-[9px] sm:text-[10px] md:text-xs text-gray-500">
+                    <div className="flex items-center gap-0.5 sm:gap-1">
+                      <Calendar size={10} className="text-[#C2366F] sm:size-[12px] md:size-14" />
                       <span>{post.date}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <User size={12} className="text-[#C2366F] md:size-14" />
-                      <span>PNY Team</span>
+                    <div className="flex items-center gap-0.5 sm:gap-1">
+                      <User size={10} className="text-[#C2366F] sm:size-[12px] md:size-14" />
+                      <span className="hidden xs:inline">PNY Team</span>
+                      <span className="inline xs:hidden">PNY</span>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-1.5 md:mb-2 line-clamp-2 text-base md:text-lg font-bold text-gray-800 transition-colors duration-300 group-hover:text-[#C2366F]">
+                  <h3 className="mb-1 sm:mb-1.5 md:mb-2 line-clamp-2 text-sm sm:text-base md:text-lg font-bold text-gray-800 transition-colors duration-300 group-hover:text-[#C2366F]">
                     {post.title}
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="mb-3 md:mb-4 line-clamp-2 text-xs md:text-sm text-gray-600">
+                  <p className="mb-2 sm:mb-3 md:mb-4 line-clamp-2 text-[11px] sm:text-xs md:text-sm text-gray-600">
                     {post.excerpt}
                   </p>
 
                   {/* Read More Link - Small */}
                   <Link
                     href={`/blogs/${post.id}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C2366F] transition-all duration-300 hover:gap-2"
+                    className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-semibold text-[#C2366F] transition-all duration-300 hover:gap-2"
                   >
                     Read More
-                    <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowRight size={10} className="sm:size-[12px] transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
 
@@ -1032,21 +1034,21 @@ const Blogs = () => {
 
           {/* Load More Button - Small */}
           {visiblePosts < filteredPosts.length && (
-            <div className="mt-10 md:mt-12 text-center">
+            <div className="mt-8 sm:mt-10 md:mt-12 text-center">
               <button
                 onClick={loadMore}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#C2366F] px-5 md:px-6 py-2 md:py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#A62258] hover:shadow-lg"
+                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg bg-[#C2366F] px-4 py-1.5 sm:px-5 sm:py-2 md:px-6 md:py-2.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#A62258] hover:shadow-lg"
               >
                 Load More
-                <ArrowRight size={14} />
+                <ArrowRight size={12} className="sm:size-[14px]" />
               </button>
             </div>
           )}
 
           {/* No Posts Message */}
           {filteredPosts.length === 0 && (
-            <div className="py-16 text-center">
-              <p className="text-gray-500">No blog posts found in this category.</p>
+            <div className="py-12 sm:py-16 text-center">
+              <p className="text-sm sm:text-base text-gray-500">No blog posts found in this category.</p>
             </div>
           )}
         </div>
@@ -1055,22 +1057,22 @@ const Blogs = () => {
       {/* =====================================================
           NEWSLETTER SECTION
       ===================================================== */}
-      <section className="bg-gradient-to-b from-white to-pink-50/50 py-10 md:py-16 border-t border-gray-100">
-        <div className="container mx-auto max-w-4xl px-4 md:px-5 text-center lg:px-8">
-          <div className="w-16 md:w-20 h-1 bg-[#C2366F] rounded-full mx-auto mb-4 md:mb-6"></div>
-          <h2 className="mb-2 md:mb-3 text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
+      <section className="bg-gradient-to-b from-white to-pink-50/50 py-8 sm:py-10 md:py-16 border-t border-gray-100">
+        <div className="container mx-auto max-w-4xl px-4 sm:px-5 text-center lg:px-8">
+          <div className="w-12 sm:w-16 md:w-20 h-1 bg-[#C2366F] rounded-full mx-auto mb-3 sm:mb-4 md:mb-6"></div>
+          <h2 className="mb-1.5 sm:mb-2 md:mb-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
             Subscribe to Our <span className="text-[#C2366F]">Newsletter</span>
           </h2>
-          <p className="mb-4 md:mb-6 text-sm md:text-base text-gray-600">
+          <p className="mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base text-gray-600 px-4">
             Get the latest beauty tips, trends, and inspiration delivered to your inbox.
           </p>
-          <div className="mx-auto flex max-w-md flex-col gap-2 md:gap-3 sm:flex-row">
+          <div className="mx-auto flex max-w-md flex-col gap-2 sm:gap-3 sm:flex-row px-4 sm:px-0">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 rounded-lg border border-gray-200 px-3 md:px-4 py-2 md:py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#C2366F] focus:ring-2 focus:ring-[#C2366F]/20"
+              className="flex-1 rounded-lg border border-gray-200 px-3 sm:px-4 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm outline-none transition-all duration-300 focus:border-[#C2366F] focus:ring-2 focus:ring-[#C2366F]/20"
             />
-            <button className="rounded-lg bg-[#C2366F] px-4 md:px-5 py-2 md:py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#A62258] hover:shadow-lg">
+            <button className="rounded-lg bg-[#C2366F] px-4 sm:px-5 py-1.5 sm:py-2 md:py-2.5 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:bg-[#A62258] hover:shadow-lg">
               Subscribe
             </button>
           </div>
