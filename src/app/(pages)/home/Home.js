@@ -69,8 +69,8 @@ const features = [
 const courses = [
   {
     icon: Sparkles,
-    title: "Beautifulian",
-    description: "Beautifulians may come in the form of talent; students will build this talent through our courses.",
+    title: "Beautician",
+    description: "Beauticians may come in the form of talent; students will build this talent through our courses.",
   },
   {
     icon: ChefHat,
@@ -1345,79 +1345,88 @@ export default function Home() {
 
 
     <section className="relative w-full overflow-hidden bg-[#fdf0f5] px-6 py-16 sm:px-8 md:px-10 lg:px-[60px] lg:py-[70px]">
-      
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(236,91,145,0.08),transparent_35%),radial-gradient(circle_at_85%_80%,rgba(190,48,111,0.06),transparent_35%)]" />
+  
+  {/* Background Glow */}
+  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(236,91,145,0.08),transparent_35%),radial-gradient(circle_at_85%_80%,rgba(190,48,111,0.06),transparent_35%)]" />
 
-      <div className="relative z-10 mx-auto max-w-[1400px]">
+{/* Sticker Image - Top Right Corner (Extra Large) */}
+<div className="absolute right-0 bottom-60 z-20">
+  <img
+    src="/images/section9img.png"
+    alt="Mentorship decoration"
+    className="w-80 h-80 object-contain md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] opacity-90"
+  />
+</div>
 
-        {/* Label */}
-        <div className="mb-8">
-          <span className="inline-flex rounded-full border border-[#dfabc1] bg-[#fff5f8] px-5 py-2 text-[11px] font-medium tracking-[0.22em] text-[#b52f6d]">
-            MENTORSHIP
-          </span>
-        </div>
+  <div className="relative z-10 mx-auto max-w-[1400px]">
 
-        {/* Heading */}
-        <h2 className="max-w-[850px] font-serif text-[44px] font-semibold leading-[1.05] tracking-[-0.035em] text-[#242124] sm:text-[50px] md:text-[56px] lg:text-[58px]">
-          Learn From Qualified Trainers
-          <br />
-          &amp; Mentors
-        </h2>
+    {/* Label */}
+    <div className="mb-8">
+      <span className="inline-flex rounded-full border border-[#dfabc1] bg-[#fff5f8] px-5 py-2 text-[11px] font-medium tracking-[0.22em] text-[#b52f6d]">
+        MENTORSHIP
+      </span>
+    </div>
 
-        {/* Description */}
-        <p className="mt-8 max-w-[800px] text-[16px] leading-[1.65] text-[#596079] sm:text-[17px] md:text-[18px]">
-          Our online learning runs on an organised system, and qualified
-          trainers and mentors support learners throughout the training
-          journey.
-        </p>
+    {/* Heading */}
+    <h2 className="max-w-[850px] font-serif text-[44px] font-semibold leading-[1.05] tracking-[-0.035em] text-[#242124] sm:text-[50px] md:text-[56px] lg:text-[58px]">
+      Learn From Qualified Trainers
+      <br />
+      &amp; Mentors
+    </h2>
 
-        {/* Timeline */}
-        <div className="relative mt-[70px] lg:mt-[78px]">
+    {/* Description */}
+    <p className="mt-8 max-w-[800px] text-[16px] leading-[1.65] text-[#596079] sm:text-[17px] md:text-[18px]">
+      Our online learning runs on an organised system, and qualified
+      trainers and mentors support learners throughout the training
+      journey.
+    </p>
 
-          {/* Desktop Horizontal Line */}
-          <div className="absolute left-0 right-0 top-[29px] hidden h-px bg-[#dda9bf] lg:block" />
+    {/* Timeline */}
+    <div className="relative mt-[70px] lg:mt-[78px]">
 
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      {/* Desktop Horizontal Line */}
+      <div className="absolute left-0 right-0 top-[29px] hidden h-px bg-[#dda9bf] lg:block" />
 
-            {steps.map((step, index) => {
-              const Icon = step.icon;
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
 
-              return (
-                <div key={step.title} className="relative">
+        {steps.map((step, index) => {
+          const Icon = step.icon;
 
-                  {/* Mobile Vertical Line */}
-                  {index !== steps.length - 1 && (
-                    <div className="absolute left-[29px] top-[58px] h-[calc(100%+48px)] w-px bg-[#dda9bf] lg:hidden" />
-                  )}
+          return (
+            <div key={step.title} className="relative">
 
-                  {/* Icon */}
-                  <div className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-full bg-gradient-to-br from-[#bd3374] via-[#ca4380] to-[#dc6797] shadow-[0_6px_18px_rgba(189,51,116,0.18)]">
-                    <Icon
-                      className="h-[25px] w-[25px] text-white"
-                      strokeWidth={1.8}
-                    />
-                  </div>
+              {/* Mobile Vertical Line */}
+              {index !== steps.length - 1 && (
+                <div className="absolute left-[29px] top-[58px] h-[calc(100%+48px)] w-px bg-[#dda9bf] lg:hidden" />
+              )}
 
-                  {/* Content */}
-                  <div className="relative z-10 mt-7">
-                    <h3 className="font-serif text-[21px] font-semibold leading-tight text-[#181719] sm:text-[22px]">
-                      {step.title}
-                    </h3>
+              {/* Icon */}
+              <div className="relative z-10 flex h-[58px] w-[58px] items-center justify-center rounded-full bg-gradient-to-br from-[#bd3374] via-[#ca4380] to-[#dc6797] shadow-[0_6px_18px_rgba(189,51,116,0.18)]">
+                <Icon
+                  className="h-[25px] w-[25px] text-white"
+                  strokeWidth={1.8}
+                />
+              </div>
 
-                    <p className="mt-4 max-w-[280px] text-[15px] leading-[1.55] text-[#697087] sm:text-[16px]">
-                      {step.description}
-                    </p>
-                  </div>
+              {/* Content */}
+              <div className="relative z-10 mt-7">
+                <h3 className="font-serif text-[21px] font-semibold leading-tight text-[#181719] sm:text-[22px]">
+                  {step.title}
+                </h3>
 
-                </div>
-              );
-            })}
+                <p className="mt-4 max-w-[280px] text-[15px] leading-[1.55] text-[#697087] sm:text-[16px]">
+                  {step.description}
+                </p>
+              </div>
 
-          </div>
-        </div>
+            </div>
+          );
+        })}
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
 
