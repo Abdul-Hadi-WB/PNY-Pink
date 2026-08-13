@@ -1,5 +1,140 @@
 /* src/styles/animations.css */
 
+/* src/styles/animations.css - Add at the bottom */
+
+/* ============================================
+   VIBRATE WITH PAUSES (Continuous loop with gaps)
+   ============================================ */
+
+@keyframes vibrateWithGap {
+  0% { transform: translateX(0); }
+  5% { transform: translateX(-6px); }    /* Start vibrate */
+  10% { transform: translateX(6px); }
+  15% { transform: translateX(-4px); }
+  20% { transform: translateX(4px); }
+  25% { transform: translateX(-2px); }
+  30% { transform: translateX(2px); }
+  35% { transform: translateX(0); }      /* Stop vibrating */
+  100% { transform: translateX(0); }     /* Pause until next cycle */
+}
+
+/* Vibrates for 0.7s, then pauses for 1.3s (2s total cycle) */
+.vibrate-pulse {
+  animation: vibrateWithGap 2s ease-in-out infinite;
+}
+
+/* ============================================
+   VIBRATE FAST - Quick vibrations with pauses
+   ============================================ */
+
+@keyframes vibrateFastWithGap {
+  0% { transform: translateX(0); }
+  3% { transform: translateX(-5px); }
+  6% { transform: translateX(5px); }
+  9% { transform: translateX(-3px); }
+  12% { transform: translateX(3px); }
+  15% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+/* Fast vibrate for 0.3s, pause for 1.7s (2s total) */
+.vibrate-fast {
+  animation: vibrateFastWithGap 2s ease-in-out infinite;
+}
+
+/* ============================================
+   VIBRATE + FLOAT (Vibrates then floats)
+   ============================================ */
+
+@keyframes vibrateThenFloat {
+  /* Vibrate phase */
+  0% { transform: translateX(0) translateY(0); }
+  5% { transform: translateX(-5px) translateY(0); }
+  10% { transform: translateX(5px) translateY(0); }
+  15% { transform: translateX(-3px) translateY(0); }
+  20% { transform: translateX(3px) translateY(0); }
+  25% { transform: translateX(0) translateY(0); }
+  /* Float phase */
+  50% { transform: translateX(0) translateY(-8px); }
+  75% { transform: translateX(0) translateY(-5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.vibrate-float {
+  animation: vibrateThenFloat 3s ease-in-out infinite;
+}  
+
+
+/* src/styles/animations.css - Add these at the bottom */
+
+/* ============================================
+   VIBRATE WITH DELAY (Starts after 2 seconds)
+   ============================================ */
+
+@keyframes vibrateShort {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-6px); }
+  20% { transform: translateX(6px); }
+  30% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  50% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  70% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+/* Vibrates once after 2 seconds delay */
+.vibrate-after-2s {
+  animation: vibrateShort 0.8s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+/* Vibrates once after custom delay (use with delay-*) */
+.vibrate-once {
+  animation: vibrateShort 0.8s ease-in-out forwards;
+}
+
+/* Vibrate on hover */
+.vibrate-hover {
+  transition: transform 0.3s ease;
+}
+
+.vibrate-hover:hover {
+  animation: vibrateShort 0.6s ease-in-out forwards;
+}
+
+/* ============================================
+   GENTLE FLOAT + VIBRATE (Combined)
+   ============================================ */
+
+@keyframes gentleFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.gentle-float {
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+/* ============================================
+   PHONE RING EFFECT (Vibrate + Scale)
+   ============================================ */
+
+@keyframes phoneRing {
+  0% { transform: rotate(0deg) scale(1); }
+  10% { transform: rotate(-5deg) scale(1.02); }
+  20% { transform: rotate(5deg) scale(1); }
+  30% { transform: rotate(-3deg) scale(1.02); }
+  40% { transform: rotate(3deg) scale(1); }
+  50% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.phone-ring {
+  animation: phoneRing 2s ease-in-out forwards;
+  animation-delay: 2s;
+} 
 /* ============================================
    BASE ANIMATION CLASSES
    ============================================ */
@@ -53,7 +188,104 @@
 }
 
 /* ============================================
-   ANIMATION CLASSES
+   MOVING / VIBRATING ANIMATIONS
+   ============================================ */
+
+/* 1. Vibrate / Shake - Like phone vibration */
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/* 2. Float - Gently move up and down */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 3. Pulse - Grow and shrink */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* 4. Sway - Rotate left and right */
+@keyframes sway {
+  0% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+/* 5. Bounce - Jump up and down */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* 6. Wobble - Wobble side to side */
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(-5deg); }
+  30% { transform: rotate(5deg); }
+  45% { transform: rotate(-3deg); }
+  60% { transform: rotate(3deg); }
+  80% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 7. Glide - Slide left and right slowly */
+@keyframes glide {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+/* 8. Spin Slow - Rotate slowly */
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 9. Shimmer - Fade in and out */
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* 10. Swing - Swing like a pendulum */
+@keyframes swing {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+/* 11. Tada - Pop effect */
+@keyframes tada {
+  0% { transform: scale(1); }
+  10% { transform: scale(0.9); }
+  20% { transform: scale(1.1); }
+  30% { transform: scale(0.9); }
+  40% { transform: scale(1.05); }
+  50%, 100% { transform: scale(1); }
+}
+
+/* 12. Jello - Jelly effect */
+@keyframes jello {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(0.95, 1.05); }
+  50% { transform: scale(1.05, 0.95); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
+/* ============================================
+   ANIMATION CLASSES - Scroll/Page Load
    ============================================ */
 
 .animate-fade {
@@ -77,6 +309,58 @@
 }
 
 /* ============================================
+   ANIMATION CLASSES - Continuous Moving
+   ============================================ */
+
+.vibrate {
+  animation: vibrate 0.5s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.wobble {
+  animation: wobble 2.5s ease-in-out infinite;
+}
+
+.glide {
+  animation: glide 4s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
+
+.shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.swing {
+  animation: swing 2.5s ease-in-out infinite;
+}
+
+.tada {
+  animation: tada 1.5s ease-in-out infinite;
+}
+
+.jello {
+  animation: jello 1.5s ease-in-out infinite;
+}
+
+/* ============================================
    DELAYS
    ============================================ */
 
@@ -85,6 +369,11 @@
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
 .delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
 
 /* ============================================
    STAGGER FOR GRIDS
@@ -104,6 +393,8 @@
 .stagger-children > *:nth-child(8) { animation: fadeUp 0.6s ease forwards 0.4s; }
 .stagger-children > *:nth-child(9) { animation: fadeUp 0.6s ease forwards 0.45s; }
 .stagger-children > *:nth-child(10) { animation: fadeUp 0.6s ease forwards 0.5s; }
+.stagger-children > *:nth-child(11) { animation: fadeUp 0.6s ease forwards 0.55s; }
+.stagger-children > *:nth-child(12) { animation: fadeUp 0.6s ease forwards 0.6s; }
 
 /* ============================================
    HERO ANIMATION (Page Load)

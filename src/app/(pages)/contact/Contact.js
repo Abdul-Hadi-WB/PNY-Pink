@@ -43,11 +43,11 @@ export default function ContactPage() {
 
             {/* Right Side - Image - Animates with scale */}
             <div className="hero-image flex-shrink-0 lg:pr-4 xl:pr-10">
-              <img
-                src="/images/contactimg.png"
-                alt="Contact Us"
-                className="h-32 w-auto object-contain drop-shadow-2xl sm:h-36 md:h-40 lg:h-48 xl:h-56"
-              />
+  <img
+  src="/images/contactimg.png"
+  alt="Contact Us"
+  className="h-32 w-auto object-contain drop-shadow-2xl sm:h-36 md:h-40 lg:h-48 xl:h-56 vibrate-pulse"
+/>
             </div>
 
           </div>
