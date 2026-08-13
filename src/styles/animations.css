@@ -1,0 +1,130 @@
+/* src/styles/animations.css */
+
+/* ============================================
+   BASE ANIMATION CLASSES
+   ============================================ */
+
+/* Fade In */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Left */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide Right */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   ANIMATION CLASSES
+   ============================================ */
+
+.animate-fade {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+.animate-scale {
+  opacity: 0;
+  animation: scaleIn 0.8s ease forwards;
+}
+
+/* ============================================
+   DELAYS
+   ============================================ */
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ============================================
+   STAGGER FOR GRIDS
+   ============================================ */
+
+.stagger-children > * {
+  opacity: 0;
+}
+
+.stagger-children > *:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.05s; }
+.stagger-children > *:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.1s; }
+.stagger-children > *:nth-child(3) { animation: fadeUp 0.6s ease forwards 0.15s; }
+.stagger-children > *:nth-child(4) { animation: fadeUp 0.6s ease forwards 0.2s; }
+.stagger-children > *:nth-child(5) { animation: fadeUp 0.6s ease forwards 0.25s; }
+.stagger-children > *:nth-child(6) { animation: fadeUp 0.6s ease forwards 0.3s; }
+.stagger-children > *:nth-child(7) { animation: fadeUp 0.6s ease forwards 0.35s; }
+.stagger-children > *:nth-child(8) { animation: fadeUp 0.6s ease forwards 0.4s; }
+.stagger-children > *:nth-child(9) { animation: fadeUp 0.6s ease forwards 0.45s; }
+.stagger-children > *:nth-child(10) { animation: fadeUp 0.6s ease forwards 0.5s; }
+
+/* ============================================
+   HERO ANIMATION (Page Load)
+   ============================================ */
+
+.hero-title {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.3s;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 0.7s;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1s;
+}
+
+.hero-image {
+  opacity: 0;
+  animation: scaleIn 1s ease forwards 0.8s;
+}

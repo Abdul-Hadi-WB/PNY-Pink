@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import '@/styles/animations.css';
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -325,121 +327,127 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: FEATURES */}
+    {/* ======================================================
+    SECTION 2: FEATURES - WITH AMAZING ANIMATIONS
+====================================================== */}
 
-      <section className="py-8 sm:py-10 md:py-12 lg:py-14 relative overflow-hidden bg-gradient-to-br from-pink-50 via-white to-pink-50/30">
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle at 40px 40px, #C2366F 1.5px, transparent 0)`,
-            backgroundSize: "80px 80px",
-          }}
-        ></div>
+<section className="animate-fade py-8 sm:py-10 md:py-12 lg:py-14 relative overflow-hidden bg-gradient-to-br from-pink-50 via-white to-pink-50/30">
+  <div
+    className="absolute inset-0 opacity-[0.03] pointer-events-none"
+    style={{
+      backgroundImage: `radial-gradient(circle at 40px 40px, #C2366F 1.5px, transparent 0)`,
+      backgroundSize: "80px 80px",
+    }}
+  ></div>
 
-        <div className="absolute top-20 right-10 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
+  <div className="absolute top-20 right-10 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-20 left-10 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-[#C2366F]/5 rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[50px] font-bold text-[#252525] leading-[1.05] tracking-[-0.035em]">
-              Designed for Your{" "}
-              <span className="relative inline-block">
-                <span className="text-[#C2366F]">Success</span>
-                <span className="absolute bottom-0 left-0 w-full h-[3px] sm:h-[4px] bg-gradient-to-r from-[#C2366F] via-[#E86D9B] to-[#C2366F] rounded-full"></span>
-              </span>
-            </h2>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    {/* Heading with fade-up animation */}
+    <div className="animate-fade text-center max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[50px] font-bold text-[#252525] leading-[1.05] tracking-[-0.035em]">
+        Designed for Your{" "}
+        <span className="relative inline-block">
+          <span className="text-[#C2366F]">Success</span>
+          <span className="absolute bottom-0 left-0 w-full h-[3px] sm:h-[4px] bg-gradient-to-r from-[#C2366F] via-[#E86D9B] to-[#C2366F] rounded-full"></span>
+        </span>
+      </h2>
 
-            <p className="text-[#252525]/50 text-sm sm:text-base md:text-[17px] lg:text-[18px] mt-2 sm:mt-3 max-w-sm mx-auto font-light tracking-wide">
-              Industry-ready skills with globally recognized certification
-            </p>
-          </div>
+      <p className="text-[#252525]/50 text-sm sm:text-base md:text-[17px] lg:text-[18px] mt-2 sm:mt-3 max-w-sm mx-auto font-light tracking-wide">
+        Industry-ready skills with globally recognized certification
+      </p>
+    </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+    {/* Features Grid - Stagger animation on cards */}
+    <div className="stagger-children grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
+      {features.map((feature, index) => {
+        const Icon = feature.icon;
 
-              return (
-                <div
-                  key={index}
-                  className="group relative bg-white rounded-2xl p-5 sm:p-6 md:p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden border-2 border-[#C2366F]/10 shadow-xl hover:shadow-2xl"
-                  style={{
-                    boxShadow: "0 10px 40px rgba(194,54,111,0.08)",
-                  }}
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C2366F]/15 via-[#C2366F]/5 to-[#C2366F]/10 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+        return (
+          <div
+            key={index}
+            className="group relative bg-white rounded-2xl p-5 sm:p-6 md:p-7 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden border-2 border-[#C2366F]/10 shadow-xl hover:shadow-2xl"
+            style={{
+              boxShadow: "0 10px 40px rgba(194,54,111,0.08)",
+            }}
+          >
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C2366F]/15 via-[#C2366F]/5 to-[#C2366F]/10 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
 
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F]/10 via-[#C2366F]/5 to-[#C2366F]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F]/10 via-[#C2366F]/5 to-[#C2366F]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                  <div className="absolute top-0 left-4 right-4 md:left-6 md:right-6 h-[2px] bg-gradient-to-r from-[#C2366F]/30 via-[#C2366F]/60 to-[#C2366F]/30 group-hover:from-[#C2366F] group-hover:via-[#C2366F] group-hover:to-[#C2366F] transition-all duration-500"></div>
+            <div className="absolute top-0 left-4 right-4 md:left-6 md:right-6 h-[2px] bg-gradient-to-r from-[#C2366F]/30 via-[#C2366F]/60 to-[#C2366F]/30 group-hover:from-[#C2366F] group-hover:via-[#C2366F] group-hover:to-[#C2366F] transition-all duration-500"></div>
 
-                  <div className="relative z-10">
-                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 sm:mb-4 md:mb-5 group-hover:scale-110 transition-transform duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F] to-[#8A1D4B] rounded-2xl opacity-10 group-hover:opacity-25 transition-opacity duration-500"></div>
+            <div className="relative z-10">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 sm:mb-4 md:mb-5 group-hover:scale-110 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F] to-[#8A1D4B] rounded-2xl opacity-10 group-hover:opacity-25 transition-opacity duration-500"></div>
 
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F] to-[#8A1D4B] rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C2366F] to-[#8A1D4B] rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-2xl"></div>
 
-                      <div className="absolute inset-[2px] bg-white rounded-2xl flex items-center justify-center border border-[#C2366F]/10 group-hover:border-[#C2366F]/30 transition-all duration-300">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-[#C2366F] group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl md:text-[21px] lg:text-[22px] font-bold text-[#252525] mb-1.5 sm:mb-2 md:mb-2.5 tracking-tight group-hover:text-[#C2366F] transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-
-                    <p className="text-[#252525]/50 text-sm sm:text-[15px] md:text-[16px] leading-relaxed font-light group-hover:text-[#252525]/70 transition-colors duration-300">
-                      {feature.description}
-                    </p>
-
-                    <div className="relative z-10 mt-3 sm:mt-4 md:mt-5 flex items-center text-[#C2366F] font-medium text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
-                      <span className="text-[10px] sm:text-xs tracking-wider">LEARN MORE</span>
-                      <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 ml-1.5 sm:ml-2" />
-                    </div>
-                  </div>
-
-                  <div className="absolute -top-8 -right-8 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-[#C2366F]/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-
-                  <div className="absolute -bottom-8 -left-8 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-tl from-[#C2366F]/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 delay-100"></div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-6 sm:mt-8 md:mt-10 max-w-4xl mx-auto">
-            <div className="relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-5 bg-gradient-to-r from-[#C2366F] to-[#8A1D4B] rounded-2xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 shadow-2xl shadow-[#C2366F]/30 overflow-hidden">
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-              <div className="flex items-center gap-3 sm:gap-4 text-white z-10">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                  <Calendar className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-white" />
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-base sm:text-lg md:text-[21px] lg:text-[22px] tracking-tight">
-                    Free Orientation Class
-                  </h4>
-
-                  <p className="text-white/60 text-sm sm:text-[15px] md:text-[16px] font-light">
-                    Book your spot today
-                  </p>
+                <div className="absolute inset-[2px] bg-white rounded-2xl flex items-center justify-center border border-[#C2366F]/10 group-hover:border-[#C2366F]/30 transition-all duration-300">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-[#C2366F] group-hover:scale-110 transition-transform duration-300" />
                 </div>
               </div>
 
-              <button className="group flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 md:px-7 lg:px-8 py-2 sm:py-2.5 md:py-3 bg-white text-[#C2366F] font-bold rounded-full hover:bg-[#7BD535] hover:text-[#252525] transition-all duration-300 shadow-xl shadow-white/30 hover:shadow-[#7BD535]/40 hover:-translate-y-1 z-10 text-sm sm:text-base">
-                <span>Book Now</span>
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              <h3 className="text-lg sm:text-xl md:text-[21px] lg:text-[22px] font-bold text-[#252525] mb-1.5 sm:mb-2 md:mb-2.5 tracking-tight group-hover:text-[#C2366F] transition-colors duration-300">
+                {feature.title}
+              </h3>
+
+              <p className="text-[#252525]/50 text-sm sm:text-[15px] md:text-[16px] leading-relaxed font-light group-hover:text-[#252525]/70 transition-colors duration-300">
+                {feature.description}
+              </p>
+
+              <div className="relative z-10 mt-3 sm:mt-4 md:mt-5 flex items-center text-[#C2366F] font-medium text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
+                <span className="text-[10px] sm:text-xs tracking-wider">LEARN MORE</span>
+                <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 ml-1.5 sm:ml-2" />
+              </div>
             </div>
+
+            <div className="absolute -top-8 -right-8 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-[#C2366F]/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+
+            <div className="absolute -bottom-8 -left-8 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-tl from-[#C2366F]/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 delay-100"></div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* CTA Banner - Slide from left with delay */}
+    <div className="animate-slide-left delay-2 mt-6 sm:mt-8 md:mt-10 max-w-4xl mx-auto">
+      <div className="relative flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-5 bg-gradient-to-r from-[#C2366F] to-[#8A1D4B] rounded-2xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 shadow-2xl shadow-[#C2366F]/30 overflow-hidden">
+        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <div className="flex items-center gap-3 sm:gap-4 text-white z-10">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+            <Calendar className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-white" />
+          </div>
+
+          <div>
+            <h4 className="font-bold text-base sm:text-lg md:text-[21px] lg:text-[22px] tracking-tight">
+              Free Orientation Class
+            </h4>
+
+            <p className="text-white/60 text-sm sm:text-[15px] md:text-[16px] font-light">
+              Book your spot today
+            </p>
           </div>
         </div>
-      </section>
+
+        <button className="group flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 md:px-7 lg:px-8 py-2 sm:py-2.5 md:py-3 bg-white text-[#C2366F] font-bold rounded-full hover:bg-[#7BD535] hover:text-[#252525] transition-all duration-300 shadow-xl shadow-white/30 hover:shadow-[#7BD535]/40 hover:-translate-y-1 z-10 text-sm sm:text-base">
+          <span>Book Now</span>
+          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-  {/* ======================================================
-    SECTION 3: START LEARNING (PREMIUM DESIGN)
+{/* ======================================================
+    SECTION 3: START LEARNING - WITH AMAZING ANIMATIONS
 ====================================================== */}
 
-<section className="relative py-8 sm:py-10 md:py-12 lg:py-14 overflow-hidden bg-gradient-to-r from-pink-100/20 via-white to-pink-50/30">
+<section className="animate-fade delay-1 relative py-8 sm:py-10 md:py-12 lg:py-14 overflow-hidden bg-gradient-to-r from-pink-100/20 via-white to-pink-50/30">
 
   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(194,54,111,0.08)_0%,_transparent_60%)]"></div>
 
@@ -447,8 +455,8 @@ export default function Home() {
 
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-    {/* Section Heading */}
-    <div className="text-center mb-6 sm:mb-8 md:mb-10">
+    {/* Section Heading - Fade up */}
+    <div className="animate-fade text-center mb-6 sm:mb-8 md:mb-10">
 
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[50px] font-bold leading-[1.05] tracking-[-0.035em] relative inline-block text-[#000000]">
         Start Learning
@@ -462,8 +470,8 @@ export default function Home() {
 
     </div>
 
-    {/* Courses Grid */}
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto">
+    {/* Courses Grid - Stagger animation */}
+    <div className="stagger-children grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto">
 
       {courses.map((course, index) => {
 

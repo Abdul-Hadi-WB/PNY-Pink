@@ -6,7 +6,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fdf0f5] to-white">
       
-      {/* Hero Section with Left Heading & Right Image - Extended Height */}
+      {/* ============================================
+          HERO SECTION - CSS ANIMATIONS
+      ============================================ */}
       <div className="relative overflow-hidden bg-gradient-to-r from-[#C2366F] via-[#D94F83] to-[#E986AE] py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="absolute inset-0 bg-[url('/images/pattern-bg.png')] opacity-10"></div>
         
@@ -15,16 +17,19 @@ export default function ContactPage() {
             
             {/* Left Side - Heading */}
             <div className="flex-1 pl-0 text-center lg:pl-8 xl:pl-16 lg:text-left">
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight -mt-2 sm:-mt-3 md:-mt-4">
+              {/* Hero Title - Animates on page load */}
+              <h1 className="hero-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight -mt-2 sm:-mt-3 md:-mt-4">
                 Begin Your Journey
               </h1>
-              <p className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base md:text-[17px] lg:text-[18px] xl:text-[19px] text-white/90">
+              
+              {/* Hero Subtitle - Animates after title */}
+              <p className="hero-subtitle mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base md:text-[17px] lg:text-[18px] xl:text-[19px] text-white/90">
                 Connect with us today and take the first step toward<br className="hidden sm:block" />
                 building a successful career in the beauty industry.
               </p>
               
-              {/* Badges Below Paragraph */}
-              <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+              {/* Hero CTA - Animates after subtitle */}
+              <div className="hero-cta mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
                 <div className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 sm:px-5 py-1.5 sm:py-2 text-white/80 text-xs sm:text-sm flex items-center gap-2">
                   <span className="text-[#7BD535]">●</span>
                   We're here to help
@@ -36,8 +41,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Side - Image */}
-            <div className="flex-shrink-0 lg:pr-4 xl:pr-10">
+            {/* Right Side - Image - Animates with scale */}
+            <div className="hero-image flex-shrink-0 lg:pr-4 xl:pr-10">
               <img
                 src="/images/contactimg.png"
                 alt="Contact Us"
@@ -49,11 +54,15 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Main Contact Section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:px-8 lg:px-12">
+      {/* ============================================
+          MAIN CONTACT SECTION
+      ============================================ */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:px-8 lg:px-12 ">
         
-        {/* Contact Info Cards with Animated Hover Effects */}
-        <div className="mb-12 sm:mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* ============================================
+            CONTACT INFO CARDS - STAGGER ANIMATION
+        ============================================ */}
+        <div className="stagger-children mb-12 sm:mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {[
             { 
               icon: MapPin, 
@@ -136,11 +145,15 @@ export default function ContactPage() {
           ))}
         </div>
 
-        {/* Form and Map Grid */}
+        {/* ============================================
+            FORM AND MAP GRID
+        ============================================ */}
         <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-5">
           
-          {/* Form - 3 columns */}
-          <div className="lg:col-span-3">
+          {/* ============================================
+              FORM - SLIDE LEFT ANIMATION
+          ============================================ */}
+          <div className="animate-slide-left lg:col-span-3">
             <div className="rounded-3xl bg-white p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl transition-all duration-300 hover:shadow-2xl">
               <div className="mb-6 sm:mb-8">
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#242124]">Send Us a Message</h2>
@@ -235,8 +248,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* WhatsApp Card - 2 columns */}
-          <div className="lg:col-span-2">
+          {/* ============================================
+              WHATSAPP CARD - SLIDE RIGHT ANIMATION
+          ============================================ */}
+          <div className="animate-slide-right lg:col-span-2">
             <div className="group relative overflow-hidden rounded-3xl bg-[#C2366F] p-6 sm:p-8 md:p-10 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
               <div className="relative flex items-center gap-3">
                 <MessageCircle size={24} className="sm:size-[28px] text-white" />
@@ -251,11 +266,13 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="mt-12 sm:mt-16 md:mt-20">
+        {/* ============================================
+            MAP SECTION - SCALE ANIMATION WITH DELAY
+        ============================================ */}
+        <div className="animate-scale delay-2 mt-12 sm:mt-16 md:mt-20">
           <div className="mx-auto max-w-7xl">
 
-            {/* Section Heading - Enhanced */}
+            {/* Section Heading */}
             <div className="mb-6 sm:mb-8 md:mb-10 flex flex-col items-start justify-between gap-3 sm:gap-4 md:flex-row md:items-end">
               <div className="flex items-center gap-3 sm:gap-4">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[5rem] font-extrabold text-[#252525] leading-none">
@@ -269,7 +286,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map Container - Premium Card */}
+            {/* Map Container */}
             <div className="group relative overflow-hidden rounded-[24px] sm:rounded-[28px] md:rounded-[32px] bg-white p-1.5 sm:p-2 shadow-[0_15px_40px_rgba(194,54,111,0.10)] ring-1 ring-[#C2366F]/10 transition-all duration-500 hover:shadow-[0_25px_60px_rgba(194,54,111,0.16)] hover:ring-[#C2366F]/20">
 
               <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[600px] overflow-hidden rounded-[18px] sm:rounded-[20px] md:rounded-[24px]">
